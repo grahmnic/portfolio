@@ -1,0 +1,79 @@
+.modalExplorer {
+    z-index: 2;
+    height: 600px;
+    width: 850px;
+    border: 4px solid;
+    border-bottom-color: #444;
+    border-right-color: #444;
+    border-left-color: #a6a6a6;
+    border-top-color: #a6a6a6;
+    background-color: #bfbfbf;
+    position: absolute;
+}
+
+.window {
+    margin-top: 5px;
+    width: 100%;
+    height: 90%;
+    bottom: 0;
+    position: absolute;
+    background-color: white; 
+}
+
+.toolbar {
+    width: 100%;
+    height: 15%;
+    background-color: #d8cc93;
+    border-bottom: 2px solid #444;
+}
+
+.mainWindow {
+    width: 100%;
+    height: 85%;
+    background-color:#daddc3;
+}
+
+.sideNav {
+    height: 100%;
+    width: 20%;
+    float: left;
+    background-color: white;
+    border-right: 2px solid #444;
+}
+
+.directories {
+    height: 100%;
+    width: 80%;
+    background-color: #daddc3;
+}
+
+.directoriesList {
+    padding: 2px;
+    top: 3%;
+    margin: 0;
+    list-style: none;
+    line-height: 28px;
+    width: 100%;
+}
+
+
+.nodeCell {
+    width: 100%;
+    cursor: pointer;
+}
+
+.nodeImg {
+    float: left;
+    width: auto;
+    height: auto;
+    max-width: 20px;
+    max-height: 20px;
+}
+
+.nodeText {
+    font-size: 13px;
+}
+
+.nodeDate {
+    float: right;
+}

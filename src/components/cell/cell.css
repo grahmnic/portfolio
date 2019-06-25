@@ -1,0 +1,47 @@
+.cellImage {
+    display: block;
+    margin: 0 auto;
+    width: 65%;
+    height: 65%;
+    cursor: pointer;
+}
+
+img {
+    padding: 5px;
+}
+
+.cellText {
+    text-align: center;
+    margin-top: -3px;
+}
+
+.referencePoint {
+    position: relative;
+    width: 0;
+    height: 0;
+}
+
+.highlight-square {
+    position: absolute;
+    padding: 1px;
+    background-color: blue;
+    opacity: 0.3;
+    z-index: 2;
+    pointer-events: none;
+    width: 100px;
+    height: 100px;
+}
+
+.no-display {
+    display: none;
+}
+
+.no-select {
+    -webkit-touch-callout: none; /* iOS Safari */
+      -webkit-user-select: none; /* Safari */
+       -khtml-user-select: none; /* Konqueror HTML */
+         -moz-user-select: none; /* Firefox */
+          -ms-user-select: none; /* Internet Explorer/Edge */
+              user-select: none; /* Non-prefixed version, currently
+                                    supported by Chrome and Opera */
+  }

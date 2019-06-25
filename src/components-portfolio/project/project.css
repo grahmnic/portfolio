@@ -1,0 +1,237 @@
+
+.project-card {
+    border-radius: 2px;
+    display: inline-block;
+    height: 300px;
+    margin: 1rem;
+    position: relative;
+    width: 500px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+    transition: all 0.25s cubic-bezier(.25,.8,.25,1);
+    overflow: hidden;
+}
+
+.project-card:hover {
+    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+}
+
+.project-card:hover .project-body{
+    transform: translateX(0%);
+    -webkit-transform: translateX(0%);
+}
+
+.project-card:hover .project-image {
+    -webkit-filter: blur(3px);
+    -moz-filter: blur(3px);
+    -o-filter: blur(3px);
+    -ms-filter: blur(3px);
+    filter: blur(3px);
+}
+
+.project-card:hover .project-title{
+    color: white;
+}
+
+.project-card:hover .project-description {
+    color: white;
+}
+
+.project-image {
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    position: absolute;
+}
+
+@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro');
+.project-title {
+    font-size: 24px;
+    color: transparent;
+    transition: all 0.25s ease-in-out;
+    font-family: 'Source Sans Pro', sans-serif;
+    line-height: 60px;
+    width: 70%;
+    text-align: right;
+    float: right;
+    margin-right: 30px;
+    text-decoration-line: underline;
+}
+
+@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro');
+.project-description {
+    font-size: 16px;
+    color: transparent;
+    float: right;
+    margin-right: 10px;
+    text-align: left;
+    width: 70%;
+    transition: all 0.25s ease-in-out;
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
+.project-wip {
+    color: yellow;
+}
+
+.project-done {
+    color: green;
+}
+
+.project-body {
+    z-index: 10;
+    position: relative;
+    background: url(../../assets/spikesmaller.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    float: right;
+    width: 80%;
+    transform: translateX(100%);
+    -webkit-transform: translateX(100%);
+    height: 101.25%;
+    transition: 0.25s transform ease-in;
+}
+
+.badge-img {
+
+}
+
+.badge-icon {
+    width: 50px;
+    margin-top: 15px;
+    margin-left: 40px;
+    height: 50px;
+}
+
+.tt {
+    position: relative;
+    display: inline-block;
+}
+
+.tt .ttt {
+    visibility: hidden;
+    width: 120px;
+}
+
+.project-right-panel {
+    width: 75%;
+    float: right;
+}
+
+.project-left-panel {
+    width: 25%;
+    float: left;
+    text-align: right;
+    color: white;
+}
+
+.project-btns {
+    float: right;
+    margin-right: 10px;
+    bottom: 10px;
+    right: 0px;
+    position: absolute;
+    width: 50%;
+    transition: all 0.5s ease-in-out;
+}
+
+.project-launch-btn {
+    border: 1px #75dcff solid;
+    padding-right: 5px;
+    padding-left: 5px;
+    width: 80px;
+    height: 40px;
+    float: right;
+    margin: 5px;
+    cursor: pointer;
+    position: absolute;
+    bottom: 0px;
+    right: 100px;
+}
+
+.project-launch-btn:hover {
+    background-color: #75dcff;
+}
+
+.project-launch-btn:hover .fa {
+    color: black;
+}
+
+.project-launch-btn:hover .project-launch-text {
+    color: black;
+}
+
+
+.project-source-btn {
+    border: 1px #53ef5e solid;
+    padding-right: 5px;
+    padding-left: 5px;
+    width: 80px;
+    height: 40px;
+    float: right;
+    margin: 5px;
+    cursor: pointer;
+}
+
+.project-source-btn-disabled {
+    border: 1px #2b2b2b solid;
+    padding-right: 5px;
+    padding-left: 5px;
+    width: 80px;
+    height: 40px;
+    float: right;
+    margin: 5px;
+    cursor: pointer;
+}
+
+.project-source-btn:hover {
+    background-color: #53ef5e;
+}
+
+.project-source-btn:hover .fab {
+    color: black;
+}
+
+.project-source-btn:hover .project-source-text {
+    color: black;
+}
+
+.project-launch-icon {
+    width: 30%;
+    line-height: 250%;
+    float: left;
+}
+
+@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro');
+.project-launch-text {
+    float: left;
+    width: 70%;
+    color: #75dcff;
+    line-height: 265%;
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
+@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro');
+.project-source-text {
+    float: left;
+    width: 70%;
+    color: #53ef5e;
+    line-height: 265%;
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
+@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro');
+.project-source-text-disabled {
+    float: left;
+    width: 70%;
+    color: #2b2b2b;
+    line-height: 265%;
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
+.project-launch-btn .fa {
+    color:#75dcff;
+}
+
+.project-source-btn .fab {
+    color: #53ef5e;
+}

@@ -1,0 +1,8 @@
+.banner-text {
+    font-size: 20px;
+    color:#60572f;
+    position: absolute;
+    bottom: 15px;
+    right: 10px;
+    z-index: 1;
+}

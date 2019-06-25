@@ -1,0 +1,98 @@
+{
+  "_args": [
+    [
+      {
+        "raw": "react-key-index",
+        "scope": null,
+        "escapedName": "react-key-index",
+        "name": "react-key-index",
+        "rawSpec": "",
+        "spec": "latest",
+        "type": "tag"
+      },
+      "C:\\Users\\nick-\\OneDrive\\Documents\\portfolio"
+    ]
+  ],
+  "_from": "react-key-index@latest",
+  "_id": "react-key-index@0.1.1",
+  "_inCache": true,
+  "_location": "/react-key-index",
+  "_nodeVersion": "7.4.0",
+  "_npmOperationalInternal": {
+    "host": "packages-18-east.internal.npmjs.com",
+    "tmp": "tmp/react-key-index-0.1.1.tgz_1486703829592_0.2167072168085724"
+  },
+  "_npmUser": {
+    "name": "focuswish",
+    "email": "ben@focuswish.com"
+  },
+  "_npmVersion": "4.1.1",
+  "_phantomChildren": {},
+  "_requested": {
+    "raw": "react-key-index",
+    "scope": null,
+    "escapedName": "react-key-index",
+    "name": "react-key-index",
+    "rawSpec": "",
+    "spec": "latest",
+    "type": "tag"
+  },
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "https://registry.npmjs.org/react-key-index/-/react-key-index-0.1.1.tgz",
+  "_shasum": "8319e4f0961ae44a8eb0a4f76e4c210ef6d39cda",
+  "_shrinkwrap": null,
+  "_spec": "react-key-index",
+  "_where": "C:\\Users\\nick-\\OneDrive\\Documents\\portfolio",
+  "author": {
+    "name": "Ben",
+    "email": "ben@focuswish.com",
+    "url": "automationfuel.com"
+  },
+  "bugs": {
+    "url": "https://github.com/focuswish/react-key-index/issues"
+  },
+  "dependencies": {
+    "hashids": "^1.1.1"
+  },
+  "description": "Generate permanent, predictable keys for your React components.",
+  "devDependencies": {
+    "ava": "^0.17.0",
+    "nyc": "^10.0.0",
+    "xo": "^0.17.0"
+  },
+  "directories": {},
+  "dist": {
+    "shasum": "8319e4f0961ae44a8eb0a4f76e4c210ef6d39cda",
+    "tarball": "https://registry.npmjs.org/react-key-index/-/react-key-index-0.1.1.tgz"
+  },
+  "engines": {
+    "node": ">=4"
+  },
+  "files": [
+    "index.js"
+  ],
+  "gitHead": "827922e501ce86b09342f45b229e5cc5383ebb1c",
+  "homepage": "https://github.com/focuswish/react-key-index#readme",
+  "keywords": [],
+  "license": "MIT",
+  "maintainers": [
+    {
+      "name": "focuswish",
+      "email": "ben@focuswish.com"
+    }
+  ],
+  "name": "react-key-index",
+  "optionalDependencies": {},
+  "readme": "ERROR: No README data found!",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/focuswish/react-key-index.git"
+  },
+  "scripts": {
+    "test": "xo && nyc ava"
+  },
+  "version": "0.1.1"
+}

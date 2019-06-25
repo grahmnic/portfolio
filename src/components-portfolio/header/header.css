@@ -1,0 +1,63 @@
+@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro');
+.intro {
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 40px;
+    margin-right: auto;
+    margin-left: auto;
+    width: 400px;
+    font-weight: bolder;
+    border-radius: 6px;
+}
+
+.header {
+    z-index: 100;
+    padding-top: 20px;
+}
+
+.divider {
+    width: 90%;
+    color:#444;
+    height: 1px;
+    border: none;
+    background-color: #444;
+}
+
+@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro');
+.description {
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 12px;
+}
+
+.banner {
+
+}
+
+.intro-border {
+    background-position: left bottom;
+}
+
+.blinker {
+    background-color: black;
+}
+
+.whitespace {
+    color: transparent;
+    font-weight: bold;
+    transition: all .4s;
+    -webkit-transform: scale(0.6);
+    transform: scale(0.6);
+    display: inline-block;
+}
+
+.remove {
+    visibility: hidden;
+}
+
+.blink-intro {
+    -webkit-transition: opacity 1.5s ease-in-out;
+    -moz-transition: opacity 1.5s ease-in-out;
+    -ms-transition: opacity 1.5s ease-in-out;
+    -o-transition: opacity 1.5s ease-in-out;
+    transition: visibility 1.5s ease-in-out;
+    visibility: visible;
+}

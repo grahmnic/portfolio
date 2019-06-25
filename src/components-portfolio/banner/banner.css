@@ -1,0 +1,188 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:300');
+.navbar-link {
+    font-family: 'Roboto', sans-serif;
+    font-size: 80%;
+    font-weight: bold;
+    text-decoration-line: none;
+    color: #3f51b5;
+    margin: 10px;
+    position: relative;
+}
+
+.banner {
+    position: sticky;
+    top: 0;
+}
+
+.navbar-link:hover {
+    filter: brightness(150%);
+}
+
+.iconRotateOpen {
+    transform: rotate(0deg);
+}
+
+.iconRotateClose {
+    transform: rotate(45deg);
+}
+
+.navbar1 {
+    margin-right: 0.5vw;
+}
+
+.navIcon {
+    position: fixed;
+    float: left;
+}
+
+.nav1 {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    transition: display 0.3s;
+    -webkit-transition: display 0.3s;
+}
+
+.swipe {
+    display: none;
+}
+
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 100; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content/Box */
+.content {
+    background-color: #fefefe;
+    margin: 30vh auto; /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 500px;
+    position: relative;
+}
+
+/* The Close Button */
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.modal-icon {
+    cursor: pointer;
+    transition: opacity 0.5s ease;
+    position: relative;
+}
+
+.modal-icon:hover {
+    opacity: 0.5;
+}
+
+.modal-image {
+    position: absolute;
+    top: -60px;
+    left: 170px;
+    pointer-events: none;
+}
+
+.modal-frame {
+    display: inline-block;
+    height: 56px;
+    width: 49px;
+    margin: 20px;
+    position: relative;
+}
+
+.modal-tooltip {
+    color: white;
+    position: absolute;
+    left: -16px;
+    border-radius: 5px;
+    top: 0px;
+    height: 25px;
+    text-align: center;
+    width: 80px;
+    background: #333333;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 18px;
+    line-height: 135%;
+    opacity: 0;
+    animation: tooltip-move 4s forwards, tooltip-fade 4s forwards;
+}
+
+#fix .modal-tooltip {
+    transform: translateY(-2px);
+}
+
+.modal-tooltip::after{
+    content: " ";
+    position: absolute;
+    top: 100%; /* At the bottom of the tooltip */
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: black transparent transparent transparent;
+}
+
+@keyframes tooltip-move {
+    0% {
+        top: 10px;
+    }
+    8% {
+        top: -30px;
+    }
+    80% {
+        top: -30px;
+    }
+    100% {
+        top: 10px;
+    }
+}
+
+@keyframes tooltip-fade {
+    0% {
+        opacity: 0;
+    }
+    2% {
+        opacity: 0;
+    }
+    7% {
+        opacity: 1;
+    }
+    75% {
+        opacity: 1;
+    }
+    85% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+@keyframes tooltip-out {
+    from {opacity: 1; top: -30px}
+    to {opacity: 0; top: -10px}
+}
+
+#email {
+    display: none;
+}

@@ -1,0 +1,89 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300');
+.screenBar {
+    width: 99%;
+    height: 96%;
+    background-color: #2b2c40;
+    padding-left: 0;
+    text-align: right;
+    border-top: 2px solid #686983;
+    border-bottom: 5px solid #a6a6a6;
+    border-right: 2px solid #a6a6a6;
+    border-left: 2px solid #a6a6a6;
+    color: white;
+    font-family: 'Open Sans', sans-serif;    
+}
+
+.screenCell {
+    display: inline;
+    list-style-type: none;
+    font-size: 65px;
+}
+
+.screen {
+    width: 100%;
+    height: 25%;
+}
+
+.calculator {
+    width: 100%;
+    height: 94.5%;
+    background-color: white;
+    display: block;
+    margin: 0 auto;
+}
+
+.pad {
+    width: 100%;
+    height: 75%;
+    background-color: #2b2c40;
+    display: flex;
+}
+
+.padNum {
+    height: 100%;
+    width: 60%;
+}
+
+.padCalc {
+    height: 100%;
+    width: 40%;
+}
+
+.padBtn {
+        border-top: ridge 2px white;
+        border-left: ridge 2px white;
+        border-bottom: ridge 2px white;
+        border-right: ridge 2px white;
+        font-size: 30px;
+        width: 33%;
+        height: 25%;
+}
+.padBtn:hover {
+    background-color: #686983;
+    border-top-color: lightgrey;
+    border-left-color: lightgrey;
+    border-bottom-color: lightgrey;
+    border-top-color: lightgrey;
+    color: white
+}
+
+.padCalcBtn {
+    border-top: ridge 2px #505059;
+    border-left: ridge 2px #505059;
+    border-bottom: ridge 2px #505059;
+    border-right: ridge 2px #505059;
+    font-size: 30px;
+    width: 100%;
+    height: 16.67%;
+    background-color: #2b2c40;
+    color: #4CAF50;
+}
+
+.padCalcBtn:hover {
+    background-color: #505059;
+    border-top-color: lightgrey;
+    border-left-color: lightgrey;
+    border-bottom-color: #505059;
+    border-top-color: lightgrey;
+    color: #A5D6A7;
+}

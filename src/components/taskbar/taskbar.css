@@ -1,0 +1,117 @@
+.taskbar {
+    height: 35px;
+    position: absolute;
+    width: 100vw;
+    bottom: 0;
+    background-color: #bfbfbf;
+    display: table;
+}
+
+.taskbarBtn {
+    border: 2px solid;
+    border-bottom-color: #444;
+    border-right-color: #444;
+    border-left-color: #a6a6a6;
+    border-top-color: #a6a6a6;
+    background-color: #bfbfbf;
+    line-height: 0;
+    padding: 2px;
+    height: 25px;
+    max-width: 300px;
+    min-width: 150px;
+}
+
+.taskbarBtn:hover {
+    background-color: #a6a6a6;
+}
+
+.taskbarElement {
+    padding: 1.5px !important;
+    position: relative;
+    top: 50%;
+    transform: translateY(15%);
+    display: table-cell;
+}
+
+.taskbarImg {
+    width: auto;
+    height: auto;
+    max-width: 15px;
+    max-height: 15px;
+    float: left;
+    transform: translateY(-20%);
+}
+
+.taskbarText {
+    transform: translateY(-8px);
+    font-size: 16px;
+    font-family: 'VT323', monospace;
+}
+
+.taskbarStartBtn {
+    border: 4px solid;
+    border-bottom-color: #444;
+    border-right-color: #444;
+    border-left-color: #a6a6a6;
+    border-top-color: #a6a6a6;
+    background-color: #bfbfbf;
+    font-size: 12px;
+    line-height: 0;
+    padding: 2px;
+    height: 25px;
+    width: 35px;
+    display: inline-block;
+    transform: translateY(-25%);
+}
+
+.taskbarStartBtn:hover {
+    background-color: #b6b2b2;
+}
+
+.startmenu {
+    z-index: 3;
+    border: 3px solid;
+    background-color: #bfbfbf;
+    border-color: #a6a6a6;
+    padding: 2px;
+    position: fixed;
+    width: 140px;
+    border-bottom: none;
+    border-right-color: #444;
+    border-left-color: #a6a6a6;
+    border-top-color: #a6a6a6;
+    bottom: 35px;
+}
+
+.taskbarGridItem {
+    align-content: center;
+    display: flex;
+    align-items: center;
+    padding: 2px;
+    height: 25px;
+}
+
+.taskbarGridItem p {
+    display: inline-block;
+    margin: 0;
+}
+
+.taskbarGridItem img {
+    float: left;
+    width: auto;
+    height: auto;
+    max-width: 20px;
+    max-height: 20px;
+    margin: 0;
+}
+
+.taskbarGridContainer:hover {
+    background-color: #a6a6a6;
+}
+
+.footer {
+    z-index: 2;
+    position: sticky;
+    bottom: 0;
+    left: 0;
+}

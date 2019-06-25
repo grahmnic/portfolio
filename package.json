@@ -1,0 +1,24 @@
+{
+  "name": "portfolio",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@material-ui/core": "^1.2.3",
+    "react": "^16.4.1",
+    "react-bootstrap": "^0.32.1",
+    "react-dom": "^16.4.1",
+    "react-draggable": "^3.0.5",
+    "react-key-index": "^0.1.1",
+    "react-onclickoutside": "^6.7.1",
+    "react-router-dom": "^4.3.1",
+    "react-scripts": "1.1.4",
+    "set-default-browser": "^1.0.1",
+    "styled-components": "^3.3.3"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  }
+}
