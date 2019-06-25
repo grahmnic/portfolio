@@ -1,8 +1,9 @@
 import React from 'react';
-import './notepad-modal.css';
+import './portfolio-modal.css';
 import Draggable from 'react-draggable';
+import PortfolioApp from '../../Portfolio-App.js';
 
-class NotepadModal extends React.Component {
+class PortfolioModal extends React.Component {
     constructor(props) {
         super(props);
     }
@@ -12,16 +13,16 @@ class NotepadModal extends React.Component {
             <Draggable
                 axis="both"
                 handle=".handle"
-                defaultPosition={{ x: 100, y: -200 }}
+                defaultPosition={{ x: 100, y: -400 }}
                 position={null}
                 grid={[25, 25]}
                 onStart={this.handleStart}
                 onDrag={this.handleDrag}
                 onStop={this.handleStop}
             >
-                <div className="nmodal">
+                <div className="portfolioModal">
                     <div className="handle modalHandle">
-                        Writepad! V1.2
+                        MyPortfolio V1.0
                         <div className="modalBar">
                             <div className="modalBtn" onClick={this.props.minimize}>
                                 -
@@ -32,13 +33,13 @@ class NotepadModal extends React.Component {
                         </div>
 
                     </div>
-                    <textarea className="modalText">
-
-                    </textarea>
+                    <div className="scrollableModal">
+                        <PortfolioApp />
+                    </div>
                 </div>
             </Draggable>
         )
     }
 }
 
-export default NotepadModal;
+export default PortfolioModal;

@@ -108,10 +108,3 @@
 .taskbarGridContainer:hover {
     background-color: #a6a6a6;
 }
-
-.footer {
-    z-index: 2;
-    position: sticky;
-    bottom: 0;
-    left: 0;
-}

@@ -2,10 +2,12 @@ import React from 'react';
 import './desktop.css';
 import Cell from '../cell/cell.js';
 import Banner from '../banner/banner.js';
+import FileExplorerIcon from '../../assets/File-Explorer-icon.png';
+import Portfolio from '../../assets/Portfolio.png';
 
 const desktopIcons = [
     {
-        src: 'https://4vector.com/i/free-vector-tango-system-file-manager_100475_tango_system_file_manager.png',
+        src: FileExplorerIcon,
         modal: 'Explorer',
         name: 'File Manager'
     },
@@ -28,6 +30,11 @@ const desktopIcons = [
         src: 'https://image.winudf.com/v2/image/YXBwaW52ZW50b3IuYWlfTmljb2xhc0dyZXMzMy5NaW5lY3JhZnRQaXhlbENhbGN1bGF0b3JfaWNvbl8wXzc0NWUwNTYy/icon.png?w=170&fakeurl=1&type=.png',
         modal: 'CalculatorModal',
         name: 'Calculator'
+    },
+    {
+        src: Portfolio,
+        modal: 'PortfolioModal',
+        name: 'Portfolio'
     }
 ]
 
@@ -86,7 +93,7 @@ class Desktop extends React.Component {
                 <div className="row">
                     <div className="col-1"></div>
                     <div className="col-1"></div>
-                    <div className="col-1"></div>
+                    <div className="col-1"><Cell src={desktopIcons[5].src} modal={desktopIcons[5].modal} name={desktopIcons[5].name} /></div>
                     <div className="col-1"></div>
                     <div className="col-1"></div>
                     <div className="col-1"></div>

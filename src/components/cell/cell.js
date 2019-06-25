@@ -5,6 +5,7 @@ import Tooltip from '@material-ui/core/Tooltip';
 import NotepadModal from '../notepad-modal/notepad-modal.js';
 import CalculatorModal from '../calculator-modal/calculator-modal.js';
 import Explorer from '../explorer-modal/explorer.js'
+import PortfolioModal from '../portfolio-modal/portfolio-modal.js';
 import PWModal from '../p&w/pw.js';
 
 class Cell extends React.Component {
@@ -65,7 +66,8 @@ class Cell extends React.Component {
             NotepadModal: <NotepadModal closeModal={this.closeModal} forceUpdate={this.forceUpdate} />,
             CalculatorModal: <CalculatorModal closeModal={this.closeModal} forceUpdate={this.forceUpdate} />,
             //PWModal: <PWModal closeModal={this.closeModal} forceUpdate={this.forceUpdate} />
-            Explorer: <Explorer closeModal={this.closeModal} forceUpdate={this.forceUpdate} />
+            Explorer: <Explorer closeModal={this.closeModal} forceUpdate={this.forceUpdate} />,
+            PortfolioModal: <PortfolioModal closeModal={this.closeModal} forceUpdate={this.forceUpdate} />
         }
 
         return (

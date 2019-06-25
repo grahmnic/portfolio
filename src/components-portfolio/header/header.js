@@ -15,6 +15,11 @@ class Header extends React.Component {
         this.mixup();
     }
 
+    componentWillUnmount() {
+        clearTimeout(this.timeout);
+        clearInterval(this.interval);
+    }
+
     mixup() {
         var counter = 0;
         /*var intv = window.setInterval(function () {
@@ -38,8 +43,8 @@ class Header extends React.Component {
                 window.clearInterval(intv);
             }
         }.bind(this), 40)*/
-        setTimeout( function() {
-            setInterval(function() {
+        this.timeout = setTimeout( function() {
+            this.interval = setInterval(function() {
                 var blinker = this.state.blink;
                 if (blinker == 'on') {
                     blinker = 'off';

@@ -1,0 +1,53 @@
+.pApp {
+  text-align: center;
+  min-width: 600px;
+  background-color: #f4e842;
+}
+
+.pApp-logo {
+  animation: App-logo-spin infinite 20s linear;
+  height: 80px;
+}
+
+.pApp-header {
+  background-color: #222;
+  height: 150px;
+  padding: 20px;
+  color: white;
+}
+
+.pApp-title {
+  font-size: 1.5em;
+}
+
+.pApp-intro {
+  font-size: large;
+}
+
+@keyframes pApp-logo-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.pApp-projects {
+  padding-top: 30px;
+  clear: both;
+}
+
+@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro');
+.pApp-projects-banner {
+  margin-top: 25px;
+  margin-bottom: -5px;
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 150%;
+}
+
+.pprojects-divider {
+  width: 8%;
+  height: 3px;
+  background-color: black;
+}
+
+html {
+
+}
