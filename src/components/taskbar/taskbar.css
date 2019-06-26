@@ -6,6 +6,7 @@
     background-color: #bfbfbf;
     display: table;
     table-layout: auto !important;
+    z-index: 100;
 }
 
 .taskbarBtn {

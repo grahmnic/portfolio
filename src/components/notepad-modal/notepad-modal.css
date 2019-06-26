@@ -19,6 +19,7 @@
     display: block;
     margin: 0 auto;
     margin-top: 5px;
+    font-weight: bold;
 }
 
 .modalHandle {
@@ -26,6 +27,7 @@
     font-size: 20px;
     padding-left: 10px;;
     position: relative;
+
 }
 
 .modalBar {

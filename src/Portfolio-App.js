@@ -4,6 +4,7 @@ import Project from './components-portfolio/project/project.js';
 import Header from './components-portfolio/header/header.js';
 import Footer from './components-portfolio/footer/footer.js';
 import Tree from './components-portfolio/tree/tree.js';
+import Summary from './components-portfolio/summary/summary.js';
 import './Portfolio-App.css';
 
 class PortfolioApp extends React.Component {
@@ -25,10 +26,9 @@ class PortfolioApp extends React.Component {
     return (
       <div className="pApp">
         
-        <Banner />
         <Header />
         <Tree />
-
+        <Summary />
         {this.state.renderProjects ? <div className="pApp-projects">
           <div id="pprojects" className="pApp-projects-banner">
             Projects

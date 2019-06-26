@@ -237,7 +237,7 @@ class CalculatorModal extends React.Component {
             <Draggable
                 axis="both"
                 handle=".handle"
-                defaultPosition={{ x: 100, y: -400 }}
+                defaultPosition={{ x: 100, y: -200 }}
                 position={null}
                 grid={[25, 25]}
                 onStart={this.handleStart}

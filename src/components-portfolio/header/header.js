@@ -66,10 +66,10 @@ class Header extends React.Component {
                 <div className="intro animated fadeIn" id="name">
                     <span className='blink-intro' id='blink-title'></span>Nicholas Chen<span className='whitespace' id='blink'>&nbsp;&nbsp;&nbsp;</span>
                 </div>
+                <div className="description">
+                    {"I <3 Javascript"}
+                </div>
                 <hr className="divider"></hr>
-                {/*<div className="description">
-                    Currently attends Stony Brook University as an undergraduate in computer science.
-        </div>*/}
             </div>
         )
     }

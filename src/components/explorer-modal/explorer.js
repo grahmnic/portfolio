@@ -212,7 +212,6 @@ class Explorer extends React.Component {
     }
 
     handleBack(name) {
-        var test = 0;
         for (var i = 0; i < this.directoryTree.length; i++) {
             for (var x = 0; x < this.directoryTree[i].directoryArray.length; x++) {
                 var temp = this.directoryTree[i].directoryArray[x];

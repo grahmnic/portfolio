@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css?family=Open+Sans:300');
 .screenBar {
-    width: 99%;
-    height: 96%;
+    width: 100%;
+    height: 100%;
     background-color: #2b2c40;
     padding-left: 0;
     text-align: right;
@@ -26,7 +26,7 @@
 
 .calculator {
     width: 100%;
-    height: 94.5%;
+    height: 95.5%;
     background-color: white;
     display: block;
     margin: 0 auto;

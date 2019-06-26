@@ -1,31 +1,31 @@
-@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro');
 .intro {
-    font-family: 'Source Sans Pro', sans-serif;
     font-size: 40px;
     margin-right: auto;
     margin-left: auto;
     width: 400px;
     font-weight: bolder;
     border-radius: 6px;
+    padding-left: 45px;
 }
 
 .header {
     z-index: 100;
     padding-top: 20px;
+    color: rgb(238,238,238);
 }
 
 .divider {
     width: 90%;
     color:#444;
-    height: 1px;
+    border-top: 1px solid rgb(238,238,238) !important;
+    height: 3px;
     border: none;
-    background-color: #444;
+    background-color: black;
 }
 
-@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro');
 .description {
-    font-family: 'Source Sans Pro', sans-serif;
-    font-size: 12px;
+    font-size: 20px;
+    color: rgb(238,238,238);
 }
 
 .banner {
@@ -37,15 +37,15 @@
 }
 
 .blinker {
-    background-color: black;
+    background-color: rgb(238,238,238);
 }
 
 .whitespace {
     color: transparent;
     font-weight: bold;
     transition: all .4s;
-    -webkit-transform: scale(0.6);
-    transform: scale(0.6);
+    -webkit-transform: scale(0.4);
+    transform: scaleX(0.2) scaleY(0.435) translateY(1px) translateX(-80px);
     display: inline-block;
 }
 

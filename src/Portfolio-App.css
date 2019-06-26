@@ -1,7 +1,7 @@
 .pApp {
   text-align: center;
   min-width: 600px;
-  background-color: #f4e842;
+  background-color: #444;
 }
 
 .pApp-logo {
@@ -34,12 +34,11 @@
   clear: both;
 }
 
-@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro');
 .pApp-projects-banner {
   margin-top: 25px;
   margin-bottom: -5px;
-  font-family: 'Source Sans Pro', sans-serif;
   font-size: 150%;
+  color: rgb(238,238,238);
 }
 
 .pprojects-divider {
