@@ -39,11 +39,27 @@ const desktopIcons = [
 ]
 
 class Desktop extends React.Component {
+    constructor(props) {
+        super(props);
+        this.modalList = [];
+    }
+
+    modalToTop(modal) {
+        if (this.modalList.includes(modal)) {
+            this.modalList.splice(this.modalList.indexOf(modal), 1);
+        }
+        this.modalList.push(modal);
+        this.modalList = this.modalList.filter(modal => modal.current != null);
+        for(var i = 0; i < this.modalList.length; i++) {
+            this.modalList[i].current.style.zIndex = i + 2;
+        }
+    }
+
     render() {
         return (
             <div className="desktop">
                 <div className="row">
-                    <div className="col-1"><Cell src={desktopIcons[0].src} modal={desktopIcons[0].modal} name={desktopIcons[0].name} /></div>
+                    <div className="col-1"><Cell src={desktopIcons[0].src} modal={desktopIcons[0].modal} name={desktopIcons[0].name} modalToTop={this.modalToTop.bind(this)} /></div>
                     <div className="col-1"></div>
                     <div className="col-1"></div>
                     <div className="col-1"></div>
@@ -55,7 +71,7 @@ class Desktop extends React.Component {
                     <div className="col-1"></div>
                 </div>
                 <div className="row">
-                <div className="col-1"><Cell src={desktopIcons[2].src} modal={desktopIcons[2].modal} name={desktopIcons[2].name} /></div>
+                <div className="col-1"><Cell src={desktopIcons[2].src} modal={desktopIcons[2].modal} name={desktopIcons[2].name} modalToTop={this.modalToTop.bind(this)} /></div>
                     <div className="col-1"></div>
                     <div className="col-1"></div>
                     <div className="col-1"></div>
@@ -67,33 +83,33 @@ class Desktop extends React.Component {
                     <div className="col-1"></div>
                 </div>
                 <div className="row">
-                    <div className="col-1"><Cell src={desktopIcons[1].src} modal={desktopIcons[1].modal} name={desktopIcons[1].name} /></div>
+                    <div className="col-1"><Cell src={desktopIcons[1].src} modal={desktopIcons[1].modal} name={desktopIcons[1].name} modalToTop={this.modalToTop.bind(this)} /></div>
                     <div className="col-1"></div>
                     <div className="col-1"></div>
                     <div className="col-1"></div>
                     <div className="col-1"></div>
                     <div className="col-1"></div>
                     <div className="col-1"></div>
-                    <div className="col-1"><Cell src={desktopIcons[3].src} modal={desktopIcons[3].modal} name={desktopIcons[3].name} /></div>
-                    <div className="col-1"></div>
-                    <div className="col-1"></div>
-                </div>
-                <div className="row">
-                    <div className="col-1"><Cell src={desktopIcons[4].src} modal={desktopIcons[4].modal} name={desktopIcons[4].name} /></div>
-                    <div className="col-1"></div>
-                    <div className="col-1"></div>
-                    <div className="col-1"></div>
-                    <div className="col-1"></div>
-                    <div className="col-1"></div>
-                    <div className="col-1"></div>
-                    <div className="col-1"></div>
+                    <div className="col-1"><Cell src={desktopIcons[3].src} modal={desktopIcons[3].modal} name={desktopIcons[3].name} modalToTop={this.modalToTop.bind(this)} /></div>
                     <div className="col-1"></div>
                     <div className="col-1"></div>
                 </div>
                 <div className="row">
+                    <div className="col-1"><Cell src={desktopIcons[4].src} modal={desktopIcons[4].modal} name={desktopIcons[4].name} modalToTop={this.modalToTop.bind(this)} /></div>
                     <div className="col-1"></div>
                     <div className="col-1"></div>
-                    <div className="col-1"><Cell src={desktopIcons[5].src} modal={desktopIcons[5].modal} name={desktopIcons[5].name} /></div>
+                    <div className="col-1"></div>
+                    <div className="col-1"></div>
+                    <div className="col-1"></div>
+                    <div className="col-1"></div>
+                    <div className="col-1"></div>
+                    <div className="col-1"></div>
+                    <div className="col-1"></div>
+                </div>
+                <div className="row">
+                    <div className="col-1"></div>
+                    <div className="col-1"></div>
+                    <div className="col-1"><Cell src={desktopIcons[5].src} modal={desktopIcons[5].modal} name={desktopIcons[5].name} modalToTop={this.modalToTop.bind(this)} /></div>
                     <div className="col-1"></div>
                     <div className="col-1"></div>
                     <div className="col-1"></div>

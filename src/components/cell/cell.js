@@ -63,11 +63,11 @@ class Cell extends React.Component {
 
     render() {
         const components = {
-            NotepadModal: <NotepadModal closeModal={this.closeModal} forceUpdate={this.forceUpdate} />,
-            CalculatorModal: <CalculatorModal closeModal={this.closeModal} forceUpdate={this.forceUpdate} />,
+            NotepadModal: <NotepadModal modalToTop={this.props.modalToTop} closeModal={this.closeModal} forceUpdate={this.forceUpdate} />,
+            CalculatorModal: <CalculatorModal modalToTop={this.props.modalToTop} closeModal={this.closeModal} forceUpdate={this.forceUpdate} />,
             //PWModal: <PWModal closeModal={this.closeModal} forceUpdate={this.forceUpdate} />
-            Explorer: <Explorer closeModal={this.closeModal} forceUpdate={this.forceUpdate} />,
-            PortfolioModal: <PortfolioModal closeModal={this.closeModal} forceUpdate={this.forceUpdate} />
+            Explorer: <Explorer modalToTop={this.props.modalToTop} closeModal={this.closeModal} forceUpdate={this.forceUpdate} />,
+            PortfolioModal: <PortfolioModal modalToTop={this.props.modalToTop} acloseModal={this.closeModal} forceUpdate={this.forceUpdate} />
         }
 
         return (

@@ -5,6 +5,19 @@ import Draggable from 'react-draggable';
 class NotepadModal extends React.Component {
     constructor(props) {
         super(props);
+        this.ref = React.createRef();
+    }
+
+    componentDidMount() {
+        var e = document.getElementById("mh");
+        e.onmousedown = () => {
+            this.props.modalToTop(this.ref);
+        }
+        e = document.getElementById("mm");
+        e.onmousedown = () => {
+            this.props.modalToTop(this.ref);
+        }
+        this.props.modalToTop(this.ref);
     }
 
     render() {
@@ -19,8 +32,8 @@ class NotepadModal extends React.Component {
                 onDrag={this.handleDrag}
                 onStop={this.handleStop}
             >
-                <div className="nmodal">
-                    <div className="handle modalHandle">
+                <div className="nmodal" ref={this.ref}>
+                    <div id="mh" className="handle modalHandle">
                         Writepad! V1.2
                         <div className="modalBar">
                             <div className="modalBtn" onClick={this.props.minimize}>
@@ -32,7 +45,7 @@ class NotepadModal extends React.Component {
                         </div>
 
                     </div>
-                    <textarea className="modalText">
+                    <textarea id="mm" className="modalText">
 
                     </textarea>
                 </div>

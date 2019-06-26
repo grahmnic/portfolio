@@ -5,7 +5,7 @@ class Banner extends React.Component {
   render() {
     return (
       <p className='banner-text'>
-        Created by Nicholas Chen © 2018
+        Created by Nicholas Chen © 2019
       </p>
     )
   }

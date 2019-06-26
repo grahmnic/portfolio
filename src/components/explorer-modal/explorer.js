@@ -186,6 +186,19 @@ class Explorer extends React.Component {
         this.state = {
             currentDirectoryState: this.directoryTree[0].directoryArray
         }
+        this.ref = React.createRef();
+    }
+
+    componentDidMount() {
+        var e = document.getElementById("mh");
+        e.onmousedown = () => {
+            this.props.modalToTop(this.ref);
+        }
+        e = document.getElementById("mm");
+        e.onmousedown = () => {
+            this.props.modalToTop(this.ref);
+        }
+        this.props.modalToTop(this.ref);
     }
 
     handleClick(name) {
@@ -226,8 +239,8 @@ class Explorer extends React.Component {
                 onDrag={this.handleDrag}
                 onStop={this.handleStop}
             >
-                <div className="modalExplorer">
-                    <div className="handle modalHandle">
+                <div className="modalExplorer" ref={this.ref}>
+                    <div id="mh" className="handle modalHandle">
                         File Manager
                         <div className="modalBar">
                             <div className="modalBtn" onClick={this.props.minimize}>
@@ -238,7 +251,7 @@ class Explorer extends React.Component {
                         </div>
                         </div>
                     </div>
-                    <div className="window">
+                    <div id="mm" className="window">
                         <div className="toolbar">
                             <div className="tabs">
                             </div>

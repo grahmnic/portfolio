@@ -5,6 +5,7 @@
     bottom: 0;
     background-color: #bfbfbf;
     display: table;
+    table-layout: auto !important;
 }
 
 .taskbarBtn {
@@ -17,8 +18,18 @@
     line-height: 0;
     padding: 2px;
     height: 25px;
-    max-width: 300px;
+    max-width: inherit;
     min-width: 150px;
+    cursor: pointer;
+}
+
+.taskbar tr td {
+    width: 1% !important;
+}
+
+.taskbar tr {
+    display: inline-block;
+    padding-left: 2px;
 }
 
 .taskbarBtn:hover {
@@ -29,22 +40,22 @@
     padding: 1.5px !important;
     position: relative;
     top: 50%;
-    transform: translateY(15%);
     display: table-cell;
 }
 
 .taskbarImg {
-    width: auto;
-    height: auto;
-    max-width: 15px;
-    max-height: 15px;
+    width: 15px;
+    height: 15px;
+    padding: 0;
+    margin-left: 4px;
     float: left;
-    transform: translateY(-20%);
+    transform: translateY(-1px);
 }
 
 .taskbarText {
-    transform: translateY(-8px);
+    transform: translateY(6px);
     font-size: 16px;
+    text-align: center;
     font-family: 'VT323', monospace;
 }
 
@@ -61,7 +72,8 @@
     height: 25px;
     width: 35px;
     display: inline-block;
-    transform: translateY(-25%);
+    transform: translateY(10%);
+    cursor: pointer;
 }
 
 .taskbarStartBtn:hover {

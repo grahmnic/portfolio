@@ -31,6 +31,19 @@ class CalculatorModal extends React.Component {
             screenArrayState: []
         }
         this.addToList = this.addToList.bind(this);
+        this.ref = React.createRef();
+    }
+
+    componentDidMount() {
+        var e = document.getElementById("mh");
+        e.onmousedown = () => {
+            this.props.modalToTop(this.ref);
+        }
+        e = document.getElementById("mm");
+        e.onmousedown = () => {
+            this.props.modalToTop(this.ref);
+        }
+        this.props.modalToTop(this.ref);
     }
 
     addToList(type, value, screenArray) {
@@ -231,8 +244,8 @@ class CalculatorModal extends React.Component {
                 onDrag={this.handleDrag}
                 onStop={this.handleStop}
             >
-                <div className="modalCalc">
-                    <div className="handle modalHandle">
+                <div className="modalCalc" ref={this.ref}>
+                    <div id="mh" className="handle modalHandle">
                         Calculator
                         <div className="modalBar">
                             <div className="modalBtn" onClick={this.props.minimize}>
@@ -244,7 +257,7 @@ class CalculatorModal extends React.Component {
                         </div>
 
                     </div>
-                    <div className="calculator">
+                    <div id="mm" className="calculator">
                         <div className="screen">
                             <ul className="screenBar">{this.screenArray.map((obj) =>
                                 <li className="screenCell" key={obj._typeId}>{obj.value}</li>
