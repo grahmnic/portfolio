@@ -67,7 +67,7 @@ class Cell extends React.Component {
             CalculatorModal: <CalculatorModal modalToTop={this.props.modalToTop} closeModal={this.closeModal} forceUpdate={this.forceUpdate} />,
             //PWModal: <PWModal closeModal={this.closeModal} forceUpdate={this.forceUpdate} />
             Explorer: <Explorer modalToTop={this.props.modalToTop} closeModal={this.closeModal} forceUpdate={this.forceUpdate} />,
-            PortfolioModal: <PortfolioModal modalToTop={this.props.modalToTop} acloseModal={this.closeModal} forceUpdate={this.forceUpdate} />
+            PortfolioModal: <PortfolioModal modalToTop={this.props.modalToTop} closeModal={this.closeModal} forceUpdate={this.forceUpdate} />
         }
 
         return (

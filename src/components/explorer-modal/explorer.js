@@ -3,12 +3,14 @@ import '../notepad-modal/notepad-modal.css';
 import './explorer.css'
 import Draggable from 'react-draggable';
 import keyIndex from '../../react-key-index';
-
-var folderSrc = 'http://www.iconwanted.com/downloads/ipapun/original-windows-95/png/24x24/icon-4.png';
-var txtSrc = 'http://www.iconwanted.com/downloads/ipapun/original-windows-95/png/24x24/icon-64.png';
-var mdSrc = 'http://www.iconwanted.com/downloads/ipapun/original-windows-95/png/24x24/icon-60.png';
-var diskSrc = 'http://www.iconwanted.com/downloads/ipapun/original-windows-95/png/24x24/icon-68.png';
-var exeSrc = 'http://www.iconwanted.com/downloads/ipapun/original-windows-95/png/24x24/icon-3.png';
+import exe from '../../assets/exe.png';
+import folder_full from '../../assets/folder_full.png';
+import folder_empty from '../../assets/folder_empty.png';
+import md_disc_out from '../../assets/md_disc.png';
+import md_disc_in from '../../assets/md.png';
+import disc from '../../assets/disc.png';
+import md_file from '../../assets/md-file.png';
+import text from '../../assets/text.png';
 
 class date {
     date = {
@@ -60,7 +62,6 @@ class Folder {
         this.directoryArray = directoryArray;
         this.name = name;
         this.date = date;
-        this.size = this.calcSize();
     }
 
     sortByName() {
@@ -75,16 +76,12 @@ class Folder {
         });
     }
 
-    calcSize() {
-        var result;
-        this.directoryArray.forEach((node) => {
-            result += node.size;
-        });
-        return result;
-    }
-
     getType() {
-        return folderSrc;
+        if(this.directoryArray.length > 0) {
+            return folder_full;
+        } else {
+            return folder_empty;
+        }
     }
 
     getDate() {
@@ -108,11 +105,11 @@ class File {
 
     getType() {
         if (this.fileType == 'md') {
-            return mdSrc;
+            return md_file;
         } else if (this.fileType == 'txt') {
-            return txtSrc;
+            return text;
         } else {
-            return exeSrc;
+            return exe;
         }
     }
 
@@ -132,19 +129,10 @@ class Disk {
         this.name = name;
         this.capacity = capacity;
         this.directoryArray = directoryArray;
-        this.size = this.calcSize();
-    }
-
-    calcSize() {
-        var result;
-        this.directoryArray.forEach((node) => {
-            result += node.size;
-        });
-        return result;
     }
 
     getType() {
-        return diskSrc;
+        return disc;
     }
 
     getDate() {
@@ -155,16 +143,38 @@ class Disk {
 class Directory {
     tree = [];
     currentNode;
+    stack = [];
 
     constructor(directoryTree) {
         this.tree = directoryTree;
         this.currentNode = this.tree[0];
+        this.stack = [this.tree[0].name];
+        this.populateSizes(this.tree);
     }
 
     findNode(name) {
         var result = this.tree.find((element) => {
             return element.name == name;
         });
+        return result;
+    }
+
+    populateSizes() {
+        this.tree.forEach((node) => {
+            node.size = this.calcSize(node.name);
+        });
+    }
+
+    calcSize(name) {
+        var result = 0;
+        var currentNode = this.findNode(name);
+        if(currentNode.fileType != undefined) {
+            result += currentNode.size;
+        } else {
+            currentNode.directoryArray.forEach((node) => {
+                result += this.calcSize(node);
+            });
+        }
         return result;
     }
 }
@@ -178,48 +188,61 @@ class Explorer extends React.Component {
         new Folder(['Summary'], 'About Me', new date('121420', '142015')),
         new File('txt', 'Summary', new date('060312', '111350'), 56)
     ]; //given the 0 element is the root!
-    directory = new Directory(this.directoryTree);
+    directory;
 
     constructor(props) {
         super(props);
-        this.directoryTree[0].directoryArray = keyIndex(this.directoryTree[0].directoryArray, 1);
+        this.directory = new Directory(this.directoryTree);
         this.state = {
-            currentDirectoryState: this.directoryTree[0].directoryArray
+            stack: keyIndex(this.directory.stack, 2),
+            currentDirectoryState: keyIndex(this.directoryTree[0].directoryArray, 1)
         }
         this.ref = React.createRef();
     }
 
     componentDidMount() {
-        var e = document.getElementById("mh");
+        var e = document.getElementById("mh-explorer");
         e.onmousedown = () => {
             this.props.modalToTop(this.ref);
         }
-        e = document.getElementById("mm");
+        e = document.getElementById("mm-explorer");
         e.onmousedown = () => {
             this.props.modalToTop(this.ref);
         }
         this.props.modalToTop(this.ref);
+        this.handleTop();
     }
 
     handleClick(name) {
         if (this.directory.findNode(name).fileType == undefined) {
             this.directory.currentNode = this.directory.findNode(name);
-            this.directory.currentNode.directoryArray = keyIndex(this.directory.currentNode.directoryArray, 1);
+            this.directory.stack.push(this.directory.currentNode.name);
             this.setState({
-                currentDirectoryState: this.directory.currentNode.directoryArray
+                stack: keyIndex(this.directory.stack, 2),
+                currentDirectoryState: keyIndex(this.directory.currentNode.directoryArray, 1)
             });
         }
+    }
+
+    handleTop() {
+        this.directory.currentNode = this.directoryTree[0];
+        this.directory.stack = [this.directoryTree[0].name];
+        this.setState({
+            stack: keyIndex(this.directory.stack, 2),
+            currentDirectoryState: keyIndex(this.directory.currentNode.directoryArray, 1)
+        });
     }
 
     handleBack(name) {
         for (var i = 0; i < this.directoryTree.length; i++) {
             for (var x = 0; x < this.directoryTree[i].directoryArray.length; x++) {
                 var temp = this.directoryTree[i].directoryArray[x];
-                if (this.directoryTree[i].directoryArray[x] != undefined && this.directoryTree[i].directoryArray[x].value == name) {
+                if (this.directoryTree[i].directoryArray[x] != undefined && this.directoryTree[i].directoryArray[x] == name) {
                     this.directory.currentNode = this.directoryTree[i];
-                    this.directory.currentNode.directoryArray = keyIndex(this.directory.currentNode.directoryArray, 1);
+                    this.directory.stack.pop();
                     this.setState({
-                        currentDirectoryState: this.directory.currentNode.directoryArray
+                        stack: keyIndex(this.directory.stack, 2),
+                        currentDirectoryState: keyIndex(this.directory.currentNode.directoryArray, 1)
                     });
                 }
             }
@@ -239,7 +262,7 @@ class Explorer extends React.Component {
                 onStop={this.handleStop}
             >
                 <div className="modalExplorer" ref={this.ref}>
-                    <div id="mh" className="handle modalHandle">
+                    <div id="mh-explorer" className="handle modalHandle">
                         File Manager
                         <div className="modalBar">
                             <div className="modalBtn" onClick={this.props.minimize}>
@@ -247,16 +270,31 @@ class Explorer extends React.Component {
                             </div>
                             <div className="modalBtn" onClick={this.props.closeModal}>
                                 x
-                        </div>
+                            </div>
                         </div>
                     </div>
-                    <div id="mm" className="window">
+                    <div id="mm-explorer" className="window">
                         <div className="toolbar">
                             <div className="tabs">
                             </div>
                             <div className="windowNav">
-                                <div className="modalBtn" onClick={() => this.handleBack(this.directory.currentNode.name)}>
-                                    B
+                                <div className="windowToolbar">
+
+                                </div>
+                                <div className="directoryToolbar">
+                                    <div className="modalBtn directoryBtn" onClick={() => this.handleBack(this.directory.currentNode.name)}>
+                                        <i class="fa-sm fas fa-arrow-up"></i>
+                                    </div>
+                                    <div className="modalBtn directoryBtn" onClick={() => this.handleTop()}>
+                                        <i class="fa-sm fas fa-home"></i>
+                                    </div>
+                                    <nav aria-label="breadcrumb">
+                                        <ol class="breadcrumb">
+                                            {this.state.stack.map((obj) =>
+                                                <li key={obj.id} class={"breadcrumb-item" + obj.value == this.directory.currentNode.name ? " active" : ""}>{obj.value}</li>
+                                            )}
+                                        </ol>
+                                    </nav>
                                 </div>
                             </div>
                         </div>
@@ -270,6 +308,7 @@ class Explorer extends React.Component {
                                             <img className="nodeImg" src={this.directory.findNode(obj.value).getType()} alt='' />
                                             <span className="nodeText">{obj.value}</span>
                                             <span className="nodeDate">{this.directory.findNode(obj.value).getDate().getDateTime('eng')}</span>
+                                            <span className="nodeSize">{this.directory.findNode(obj.value).size}</span> 
                                         </li>
                                     )}
                                 </ul>

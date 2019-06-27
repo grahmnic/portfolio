@@ -10,11 +10,11 @@ class PortfolioModal extends React.Component {
     }
 
     componentDidMount() {
-        var e = document.getElementById("mh");
+        var e = document.getElementById("mh-portfolio");
         e.onmousedown = () => {
             this.props.modalToTop(this.ref);
         }
-        e = document.getElementById("mm");
+        e = document.getElementById("mm-portfolio");
         e.onmousedown = () => {
             this.props.modalToTop(this.ref);
         }
@@ -34,7 +34,7 @@ class PortfolioModal extends React.Component {
                 onStop={this.handleStop}
             >
                 <div className="portfolioModal" ref={this.ref}>
-                    <div id="mh" className="handle modalHandle">
+                    <div id="mh-portfolio" className="handle modalHandle">
                         MyPortfolio V1.0
                         <div className="modalBar">
                             <div className="modalBtn" onClick={this.props.minimize}>
@@ -46,7 +46,7 @@ class PortfolioModal extends React.Component {
                         </div>
 
                     </div>
-                    <div id="mm" className="scrollableModal">
+                    <div id="mm-portfolio" className="scrollableModal">
                         <PortfolioApp />
                     </div>
                 </div>

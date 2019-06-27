@@ -14,7 +14,7 @@
 .window {
     margin-top: 5px;
     width: 100%;
-    height: 90%;
+    height: 95%;
     bottom: 0;
     position: absolute;
     background-color: white; 
@@ -22,14 +22,14 @@
 
 .toolbar {
     width: 100%;
-    height: 15%;
+    height: 20%;
     background-color: #d8cc93;
     border-bottom: 2px solid #444;
 }
 
 .mainWindow {
     width: 100%;
-    height: 85%;
+    height: 80%;
     background-color:#daddc3;
 }
 
@@ -68,6 +68,7 @@
     height: auto;
     max-width: 20px;
     max-height: 20px;
+    padding: 0;
 }
 
 .nodeText {
@@ -76,4 +77,30 @@
 
 .nodeDate {
     float: right;
+}
+
+.windowToolbar {
+    height: 55%;
+}
+
+.directoryToolbar {
+    height: 45%;
+    border-top: 2px solid #444;
+}
+
+.windowNav {
+    height: 75%;
+}
+
+.tabs {
+    height: 25%
+}
+
+.directoryBtn {
+    position: relative;
+    left: 20%;
+    top: 15%;
+    width: 21px;
+    height: 21px;
+    margin-right: 5px;
 }

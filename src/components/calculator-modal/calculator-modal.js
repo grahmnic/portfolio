@@ -35,11 +35,11 @@ class CalculatorModal extends React.Component {
     }
 
     componentDidMount() {
-        var e = document.getElementById("mh");
+        var e = document.getElementById("mh-calculator");
         e.onmousedown = () => {
             this.props.modalToTop(this.ref);
         }
-        e = document.getElementById("mm");
+        e = document.getElementById("mm-calculator");
         e.onmousedown = () => {
             this.props.modalToTop(this.ref);
         }
@@ -245,7 +245,7 @@ class CalculatorModal extends React.Component {
                 onStop={this.handleStop}
             >
                 <div className="modalCalc" ref={this.ref}>
-                    <div id="mh" className="handle modalHandle">
+                    <div id="mh-calculator" className="handle modalHandle">
                         Calculator
                         <div className="modalBar">
                             <div className="modalBtn" onClick={this.props.minimize}>
@@ -257,7 +257,7 @@ class CalculatorModal extends React.Component {
                         </div>
 
                     </div>
-                    <div id="mm" className="calculator">
+                    <div id="mm-calculator" className="calculator">
                         <div className="screen">
                             <ul className="screenBar">{this.screenArray.map((obj) =>
                                 <li className="screenCell" key={obj._typeId}>{obj.value}</li>

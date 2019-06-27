@@ -9,11 +9,11 @@ class NotepadModal extends React.Component {
     }
 
     componentDidMount() {
-        var e = document.getElementById("mh");
+        var e = document.getElementById("mh-notepad");
         e.onmousedown = () => {
             this.props.modalToTop(this.ref);
         }
-        e = document.getElementById("mm");
+        e = document.getElementById("mm-notepad");
         e.onmousedown = () => {
             this.props.modalToTop(this.ref);
         }
@@ -33,7 +33,7 @@ class NotepadModal extends React.Component {
                 onStop={this.handleStop}
             >
                 <div className="nmodal" ref={this.ref}>
-                    <div id="mh" className="handle modalHandle">
+                    <div id="mh-notepad" className="handle modalHandle">
                         Writepad! V1.2
                         <div className="modalBar">
                             <div className="modalBtn" onClick={this.props.minimize}>
@@ -45,7 +45,7 @@ class NotepadModal extends React.Component {
                         </div>
 
                     </div>
-                    <textarea id="mm" className="modalText">
+                    <textarea id="mm-notepad" className="modalText">
 
                     </textarea>
                 </div>
