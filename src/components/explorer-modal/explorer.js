@@ -161,7 +161,20 @@ class Directory {
 
     populateSizes() {
         this.tree.forEach((node) => {
-            node.size = this.calcSize(node.name);
+            var size = this.calcSize(node.name);
+            switch(size) {
+                case size >= 1000000000:
+                    node.size = Math.round(size/1000000000) + " gb";
+                    break;
+                case size >= 1000000:
+                    node.size = Math.round(size/1000000) + " mb";
+                    break;
+                case size >= 1000:
+                    node.size = Math.round(size/1000) + " kb";
+                    break;
+                default:
+                    node.size = size + " b";
+            }
         });
     }
 
@@ -181,12 +194,12 @@ class Directory {
 
 class Explorer extends React.Component {
     directoryTree = [
-        new Disk('C:', 256, ['Work Folder', 'About Me', 'README']),
-        new File('md', 'README', new date('060514', '231701'), 24),
+        new Disk('C:', 256000000, ['Work Folder', 'About Me', 'README']),
+        new File('md', 'README', new date('060514', '231701'), 24000),
         new Folder(['League of Legends'], 'Work Folder', new date('121220', '010455')),
-        new File('exe', 'League of Legends', new date('060615', '151644'), 120),
+        new File('exe', 'League of Legends', new date('060615', '151644'), 1200000),
         new Folder(['Summary'], 'About Me', new date('121420', '142015')),
-        new File('txt', 'Summary', new date('060312', '111350'), 56)
+        new File('txt', 'Summary', new date('060312', '111350'), 56000)
     ]; //given the 0 element is the root!
     directory;
 
@@ -289,7 +302,7 @@ class Explorer extends React.Component {
                                         <i class="fa-sm fas fa-home"></i>
                                     </div>
                                     <nav aria-label="breadcrumb">
-                                        <ol class="breadcrumb">
+                                        <ol class="breadcrumb explorer-breadcrumb">
                                             {this.state.stack.map((obj) =>
                                                 <li key={obj.id} class={"breadcrumb-item" + obj.value == this.directory.currentNode.name ? " active" : ""}>{obj.value}</li>
                                             )}
@@ -307,8 +320,8 @@ class Explorer extends React.Component {
                                         <li className="nodeCell" key={obj.id} onClick={() => this.handleClick(obj.value)}>
                                             <img className="nodeImg" src={this.directory.findNode(obj.value).getType()} alt='' />
                                             <span className="nodeText">{obj.value}</span>
-                                            <span className="nodeDate">{this.directory.findNode(obj.value).getDate().getDateTime('eng')}</span>
                                             <span className="nodeSize">{this.directory.findNode(obj.value).size}</span> 
+                                            <span className="nodeDate">{this.directory.findNode(obj.value).getDate().getDateTime('eng')}</span>
                                         </li>
                                     )}
                                 </ul>

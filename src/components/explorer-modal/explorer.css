@@ -12,6 +12,8 @@
 }
 
 .window {
+    border: 2px solid #bfbfbf;
+    border-top-color: #444;
     margin-top: 5px;
     width: 100%;
     height: 95%;
@@ -31,6 +33,8 @@
     width: 100%;
     height: 80%;
     background-color:#daddc3;
+    border: 2px solid #726c6c;
+    border-top-color: rgb(39, 37, 37);
 }
 
 .sideNav {
@@ -43,13 +47,11 @@
 
 .directories {
     height: 100%;
-    width: 80%;
+    width: 100%;
     background-color: #daddc3;
 }
 
 .directoriesList {
-    padding: 2px;
-    top: 3%;
     margin: 0;
     list-style: none;
     line-height: 28px;
@@ -69,14 +71,32 @@
     max-width: 20px;
     max-height: 20px;
     padding: 0;
+    margin: 3px;
 }
 
 .nodeText {
-    font-size: 13px;
+    font-size: 15px;
+    color: blue;
+}
+
+.nodeCell:hover {
+    background-color:#babda3;
+    text-decoration: underline;
+    text-decoration-color: rgb(8, 8, 172);
 }
 
 .nodeDate {
     float: right;
+    width: 20%;
+    text-align: right;
+}
+
+.nodeSize {
+    float: right;
+    margin-left: 20px;
+    width: 3%;
+    text-align: right;
+    margin-right: 10px;
 }
 
 .windowToolbar {
@@ -90,10 +110,28 @@
 
 .windowNav {
     height: 75%;
+
 }
 
 .tabs {
     height: 25%
+}
+
+.explorer-breadcrumb li:first-child{
+    margin-left: -14%;
+}
+
+.explorer-breadcrumb {
+    width: 40%;
+    height: 20px;
+    border-radius: 0px;
+    position: relative;
+    left: 26.25%;
+    transform: translateY(40%);
+    margin: 0;
+    padding: 0;
+    border: 1px solid #bfbfbf;
+    border-top-color: #444;
 }
 
 .directoryBtn {
