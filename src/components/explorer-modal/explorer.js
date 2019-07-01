@@ -162,18 +162,14 @@ class Directory {
     populateSizes() {
         this.tree.forEach((node) => {
             var size = this.calcSize(node.name);
-            switch(size) {
-                case size >= 1000000000:
-                    node.size = Math.round(size/1000000000) + " gb";
-                    break;
-                case size >= 1000000:
-                    node.size = Math.round(size/1000000) + " mb";
-                    break;
-                case size >= 1000:
-                    node.size = Math.round(size/1000) + " kb";
-                    break;
-                default:
-                    node.size = size + " b";
+            if(size >= 1000000000) {
+                node.size = (Math.round(size/100000000) / 10) + " gb";
+            } else if (size >= 1000000) {
+                node.size = Math.round(size/1000000) + " mb";
+            } else if (size >= 1000) {
+                node.size = Math.round(size/1000) + " kb";
+            } else {
+                node.size = size + " b";
             }
         });
     }
@@ -195,11 +191,16 @@ class Directory {
 class Explorer extends React.Component {
     directoryTree = [
         new Disk('C:', 256000000, ['Work Folder', 'About Me', 'README']),
-        new File('md', 'README', new date('060514', '231701'), 24000),
-        new Folder(['League of Legends'], 'Work Folder', new date('121220', '010455')),
-        new File('exe', 'League of Legends', new date('060615', '151644'), 1200000),
-        new Folder(['Summary'], 'About Me', new date('121420', '142015')),
-        new File('txt', 'Summary', new date('060312', '111350'), 56000)
+        new File('md', 'README', new date('060514', '231701'), 240000),
+        new Folder(['League of Legends', 'Work Stuff'], 'Work Folder', new date('121220', '010455')),
+        new File('exe', 'League of Legends', new date('060615', '151644'), 12000000457),
+        new Folder(['Summary', 'temp'], 'About Me', new date('121420', '142015')),
+        new File('txt', 'Summary', new date('060312', '111350'), 56000),
+        new File('txt', 'temp', new date('082419', '093014'), 178),
+        new Folder(['Visual Studio Code', 'Empty Folder', 'index'], 'Work Stuff', new date('140577', '034518')),
+        new File('exe', 'Visual Studio Code', new date('020202', '044004'), 138023356),
+        new File('html', 'index', new date('022218', '095959'), 248880),
+        new Folder([], 'Empty Folder', new date('000000', '000000'))
     ]; //given the 0 element is the root!
     directory;
 
@@ -313,6 +314,45 @@ class Explorer extends React.Component {
                         </div>
                         <div className="mainWindow">
                             <div className="sideNav">
+                                <div>
+                                    <label>Favorites</label>
+                                    <ul className="sideList">
+                                        <li>
+                                            <div>
+                                                Work Folder
+                                            </div>
+                                            <div>
+                                                League of Legends
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <label>Favorites</label>
+                                    <ul className="sideList">
+                                        <li>
+                                            <div>
+                                                Work Folder
+                                            </div>
+                                            <div>
+                                                League of Legends
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <label>Favorites</label>
+                                    <ul className="sideList">
+                                        <li>
+                                            <div>
+                                                Work Folder
+                                            </div>
+                                            <div>
+                                                League of Legends
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
                             </div>
                             <div className="directories">
                                 <ul className="directoriesList">

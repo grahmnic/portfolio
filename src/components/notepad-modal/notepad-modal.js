@@ -20,6 +20,21 @@ class NotepadModal extends React.Component {
         this.props.modalToTop(this.ref);
     }
 
+    toggleBold() {
+        document.execCommand("Bold", false, true);
+        document.getElementById("textarea").focus();
+    }
+
+    toggleItalics() {
+        document.execCommand("Italic", false, null);
+        document.getElementById("textarea").focus();
+    }
+
+    toggleUnderline() {
+        document.execCommand("Underline", false, null);
+        document.getElementById("textarea").focus();
+    }
+
     render() {
         return (
             <Draggable
@@ -34,7 +49,7 @@ class NotepadModal extends React.Component {
             >
                 <div className="nmodal" ref={this.ref}>
                     <div id="mh-notepad" className="handle modalHandle">
-                        Writepad! V1.2
+                        Writepad! V1.3
                         <div className="modalBar">
                             <div className="modalBtn" onClick={this.props.minimize}>
                                 -
@@ -45,9 +60,14 @@ class NotepadModal extends React.Component {
                         </div>
 
                     </div>
-                    <textarea id="mm-notepad" className="modalText">
-
-                    </textarea>
+                    <div id="mm-notepad">
+                        <div className="ntoolbar">
+                            <button className="modalBtn toolbarBtn" onClick={this.toggleBold}><i class="fas fa-bold"></i></button>
+                            <button className="modalBtn toolbarBtn" onClick={this.toggleItalics}><i class="fas fa-italic"></i></button>
+                            <button className="modalBtn toolbarBtn" onClick={this.toggleUnderline}><i class="fas fa-underline"></i></button>
+                        </div>
+                        <div id="textarea" suppressContentEditableWarning contentEditable="true" className="modalText"></div>
+                    </div>
                 </div>
             </Draggable>
         )

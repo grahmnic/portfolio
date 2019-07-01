@@ -15,11 +15,10 @@
     border: 2px solid #bfbfbf;
     border-top-color: #444;
     width: 98%;
-    height: 90%;
+    height: 83%;
     display: block;
     margin: 0 auto;
     margin-top: 5px;
-    font-weight: bold;
 }
 
 .modalHandle {
@@ -54,4 +53,41 @@
 
 .modalBtn:hover {
     filter: brightness(50%);
+}
+
+#mm-notepad {
+    height: 99.5%;
+}
+
+.ntoolbar {
+    height: 7%;
+    width: 100%;
+    padding: 0 5px 0 5px;
+}
+
+.toolbarBtn {
+    padding: 0;
+    margin: 2px;
+    width: 25px;
+    height: 30px;
+}
+
+.toolbarBtn:hover {
+    filter: brightness(85%);
+}
+
+.toolbarBtn:active {
+    border-bottom-color: rgb(48, 47, 47);
+    border-right-color: rgb(39, 32, 32);
+    border-left-color: #8a8787;
+    border-top-color: #838282;
+    background-color: rgb(165, 157, 144);
+}
+
+#textarea {
+    font-size: 18px;
+    padding-left: 5px;
+    padding-right: 5px;
+    background: white;
+    margin-top: 8px;
 }
