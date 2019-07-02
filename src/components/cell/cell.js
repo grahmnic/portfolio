@@ -76,10 +76,8 @@ class Cell extends React.Component {
                     <div className={this.state.highlight ? 'highlight-square' : 'no-display'}>
                     
                     </div>
-                    <Tooltip id="tooltip-right cellTooltip" title={this.state.name} placement="right">
-                        <img className="cellImage no-select" src={this.state.src} onClick={() => this.click()}>
-                        </img>
-                    </Tooltip>
+                    <img data-md-tooltip={this.state.name} className="cellImage no-select" src={this.state.src} onClick={() => this.click()}>
+                    </img>
                     <p className="cellText no-select">{this.state.name}</p>
                     <div className="referencePoint">
                         {this.state.showModal ? components[this.state.modal] : <div></div>}

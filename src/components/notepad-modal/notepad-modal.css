@@ -26,12 +26,14 @@
     font-size: 20px;
     padding-left: 10px;;
     position: relative;
-
+    background:#000080;
+    color:#FFF;
 }
 
 .modalBar {
     float: right;
     height: 27px;
+    color: black;
 }
 
 .modalBtn {

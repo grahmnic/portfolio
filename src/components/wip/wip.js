@@ -26,8 +26,7 @@ class WIP extends React.Component {
         return (
             <div className="wip">
                 <div className="wip-bg"></div>
-                <div className="wip-txt">Still working on this until early 2020, currently only a demo is present.<br/>For updates on this project check out <a href="github.com/grahmnic/portfolio">github</a> and <a href="https://trello.com/b/AQzxX0jM/portfolio-2019">trello</a>.<br/><span className="wip-span">CHEERS!</span><br /> - Nick
-                <br />
+                <div className="wip-txt">Still working on this until early 2020, currently only a demo is present.<br/>For updates on this project check out <a href="github.com/grahmnic/portfolio">github</a> and <a href="https://trello.com/b/AQzxX0jM/portfolio-2019">trello</a>.<br/><span className="wip-span">CHEERS!</span>
                 <br />
                 <span className="wip-sm animated infinite heartBeat" onClick={this.destroy}>click here to dismiss</span>
                 </div>

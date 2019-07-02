@@ -24,6 +24,34 @@ class Taskbar extends React.Component {
         taskbarArray: []
     }
 
+    constructor(props) {
+        super(props);
+        this.interval = null;
+        this.state = {
+            now: new Date()
+        }
+    }
+
+    prependZero(time) {
+        if (time.toString().length < 2) {
+            return '0' + time.toString();
+        } else {
+            return time;
+        }
+    }
+
+    componentDidMount() {
+        this.interval = setInterval(function() {
+            this.setState({
+                now: new Date()
+            });
+        }.bind(this), 1000);
+    }
+
+    componentWillUnmount() {
+        clearInterval(this.interval);
+    }
+
     render() {
         return (
             <table class="taskbar">
@@ -43,7 +71,16 @@ class Taskbar extends React.Component {
                     <td><TaskbarButton size="10" name="Doodle Roam" src='http://1000logos.net/wp-content/uploads/2017/08/Chrome-Logo.png' /></td>
                     <td><TaskbarButton size="10" name="Digital Studios" src='https://upload.wikimedia.org/wikipedia/commons/thumb/e/e4/Visual_Studio_2013_Logo.svg/2000px-Visual_Studio_2013_Logo.svg.png' /></td>
                     <td><TaskbarButton size="10" name="File Manager" src={FileExplorer} /></td>
-                    <td></td>
+                    <td className="taskbarInfoTD">
+                        <div className="taskbarInfo">
+                            <p className="taskbarDate">
+                                {(this.state.now.getMonth() + 1) + "/" + this.state.now.getDate() + "/" + this.state.now.getFullYear()}
+                            </p>
+                            <p className="taskbarTime">
+                                {this.prependZero(this.state.now.getHours()) + ":" + this.prependZero(this.state.now.getMinutes()) + ":" + this.prependZero(this.state.now.getSeconds())}
+                            </p>
+                        </div>
+                    </td>
                 </tr>
             </table>
         )

@@ -7,7 +7,7 @@
     opacity: 0.75;
     z-index: 250;
     width: 100vw;
-    height: 100vw;
+    height: 100vh;
     position: absolute;
     top: 0;
 }
@@ -15,7 +15,7 @@
 .wip-txt {
     z-index: 500;
     color: white;
-    font-size: 40px;
+    font-size: 3rem;
     position: absolute;
     top: 35%;
     left: auto;
@@ -26,15 +26,14 @@
 
 .wip-span {
     color: orange;
-    font-size: 55px;
+    font-size: 6rem;
     font-weight: bold;
 }
 
 .wip-sm {
-    font-size: 18px;
+    font-size: 2rem;
     display:inline-block;
     font-weight: bold;
-    margin-left: 20px;
     cursor: pointer;
     color: rgb(209, 16, 16);
     transition: font-size 0.6s ease-in-out;

@@ -1,10 +1,14 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto:300');
 .navbar-link {
-    font-size: 100%;
+    font-size: 150%;
     text-decoration-line: none;
-    color: #3f51b5;
+    color: white;
     margin: 10px;
     position: relative;
+}
+
+.navbar-link:hover {
+    color: white;
 }
 
 .banner {
@@ -26,6 +30,10 @@
 
 .navbar1 {
     margin-right: 0.5vw;
+}
+
+.MuiIcon-fontSizeLarge {
+    color: whitesmoke !important;
 }
 
 .navIcon {

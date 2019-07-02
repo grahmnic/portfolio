@@ -68,7 +68,7 @@ class Banner extends React.Component {
             <div class="banner">
                 <div className='nav1' id="nav">
                     <IconButton className="navIcon" onClick={this.toggleNav}>
-                        <Icon className={this.state.iconRotate} color="primary">
+                        <Icon fontSize="large" className={this.state.iconRotate} color="action">
                             add_circle
                         </Icon>
                     </IconButton>

@@ -4,6 +4,11 @@
     width: 65%;
     height: 65%;
     cursor: pointer;
+    transition: filter 0.1s ease-in;
+}
+
+.cellImage:hover {
+    filter: brightness(80%);
 }
 
 img {
@@ -14,7 +19,7 @@ img {
     text-align: center;
     margin-top: -3px;
     color: white;
-    font-size: 20px;
+    font-size: 1.5rem;
 }
 
 .referencePoint {
@@ -48,6 +53,25 @@ img {
                                     supported by Chrome and Opera */
   }
 
-.cellTooltip {
-    font-size: 20px;
-}
+  [data-md-tooltip] {
+    position: relative;
+   }
+   [data-md-tooltip]:before {
+      content: attr(data-md-tooltip);
+      position: absolute;
+      bottom: -35px;
+      left: 50%;
+      padding: 8px;
+      transform: translateX(-50%) scale(0);
+      transition: transform 0.3s ease-in-out;
+      transform-origin: top;
+      background: #616161e6;
+      color: white;
+      border-radius: 2px;
+      font-size: 12px;
+      font-family: Roboto,sans-serif;
+      font-weight: 400;
+   }
+   [data-md-tooltip]:hover:before {
+    transform: translateX(-50%) scale(1);
+   }

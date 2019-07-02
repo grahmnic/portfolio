@@ -24,13 +24,45 @@
     cursor: pointer;
 }
 
+.taskbarInfo {
+    float: right;
+    line-height: 0;
+    font-size: 1.4rem;
+    margin-right: 5px;
+    background:#C0C0C0;
+    border: 1px solid;
+    padding: 4px;
+    top: 2px;
+    position: relative;
+    min-width: 80px;
+    text-align: center;
+    border-color:#FFFFFF #808080 #808080 #FFFFFF;
+}
+
+.taskbarDate {
+    top: 5px;
+    position: relative;
+    font-weight: 800;
+}
+
+.taskbarTime {
+    top: 6px;
+    position: relative;
+    font-weight: 800;
+}
+
 .taskbar tr td {
-    width: 1% !important;
+    width: 1px;
+}
+
+.taskbarInfoTD {
+    width: 100% !important;
 }
 
 .taskbar tr {
     display: inline-block;
     padding-left: 2px;
+    width: 100%;
 }
 
 .taskbarBtn:hover {
