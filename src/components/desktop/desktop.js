@@ -4,6 +4,7 @@ import Cell from '../cell/cell.js';
 import Banner from '../banner/banner.js';
 import FileExplorerIcon from '../../assets/File-Explorer-icon.png';
 import Portfolio from '../../assets/Portfolio.png';
+import PingModal from '../../assets/ping.png';
 
 const desktopIcons = [
     {
@@ -35,6 +36,11 @@ const desktopIcons = [
         src: Portfolio,
         modal: 'PortfolioModal',
         name: 'Portfolio'
+    },
+    {
+        src: PingModal,
+        modal: 'PingModal',
+        name: 'Ping'
     }
 ]
 
@@ -110,7 +116,7 @@ class Desktop extends React.Component {
                     <div className="col-1"></div>
                     <div className="col-1"></div>
                     <div className="col-1"><Cell src={desktopIcons[5].src} modal={desktopIcons[5].modal} name={desktopIcons[5].name} modalToTop={this.modalToTop.bind(this)} /></div>
-                    <div className="col-1"></div>
+                    <div className="col-1"><Cell src={desktopIcons[6].src} modal={desktopIcons[6].modal} name={desktopIcons[6].name} modalToTop={this.modalToTop.bind(this)} /></div>
                     <div className="col-1"></div>
                     <div className="col-1"></div>
                     <div className="col-1"></div>

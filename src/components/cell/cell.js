@@ -7,6 +7,7 @@ import CalculatorModal from '../calculator-modal/calculator-modal.js';
 import Explorer from '../explorer-modal/explorer.js'
 import PortfolioModal from '../portfolio-modal/portfolio-modal.js';
 import PWModal from '../p&w/pw.js';
+import PingModal from '../ping/ping.js';
 
 class Cell extends React.Component {
     constructor(props) {
@@ -25,9 +26,9 @@ class Cell extends React.Component {
     }
 
     singleClick = () => {
-        this.setState({
-            highlight: true
-        });
+        // this.setState({
+        //     highlight: true
+        // });
     };
 
     doubleClick = () => {
@@ -67,7 +68,8 @@ class Cell extends React.Component {
             CalculatorModal: <CalculatorModal modalToTop={this.props.modalToTop} closeModal={this.closeModal} forceUpdate={this.forceUpdate} />,
             //PWModal: <PWModal closeModal={this.closeModal} forceUpdate={this.forceUpdate} />
             Explorer: <Explorer modalToTop={this.props.modalToTop} closeModal={this.closeModal} forceUpdate={this.forceUpdate} />,
-            PortfolioModal: <PortfolioModal modalToTop={this.props.modalToTop} closeModal={this.closeModal} forceUpdate={this.forceUpdate} />
+            PortfolioModal: <PortfolioModal modalToTop={this.props.modalToTop} closeModal={this.closeModal} forceUpdate={this.forceUpdate} />,
+            PingModal: <PingModal modalToTop={this.props.modalToTop} closeModal={this.closeModal} forceUpdate={this.forceUpdate} />
         }
 
         return (
