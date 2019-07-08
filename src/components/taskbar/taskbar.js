@@ -76,8 +76,9 @@ class Taskbar extends React.Component {
                             <p className="taskbarDate">
                                 {(this.state.now.getMonth() + 1) + "/" + this.state.now.getDate() + "/" + this.state.now.getFullYear()}
                             </p>
+                            <div className="groove"></div>
                             <p className="taskbarTime">
-                                {this.prependZero(this.state.now.getHours()) + ":" + this.prependZero(this.state.now.getMinutes()) + ":" + this.prependZero(this.state.now.getSeconds())}
+                                {((this.state.now.getHours() + 11) % 12 + 1) + ":" + this.prependZero(this.state.now.getMinutes()) + ":" + this.prependZero(this.state.now.getSeconds()) + " " + (this.state.now.getHours() >= 12 ? "PM" : "AM")}
                             </p>
                         </div>
                     </td>

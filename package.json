@@ -12,6 +12,7 @@
     "react-onclickoutside": "^6.8.0",
     "react-router-dom": "^5.0.1",
     "react-scripts": "3.0.1",
+    "react-spritesheet": "^1.0.1",
     "set-default-browser": "^1.0.1",
     "styled-components": "^4.3.2"
   },

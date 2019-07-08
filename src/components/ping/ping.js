@@ -1,8 +1,6 @@
 import React from 'react';
 import './ping.css';
-import pingGame from './ping-game.js';
 import Draggable from 'react-draggable';
-import { MuiThemeProvider } from '@material-ui/core/styles';
 
 class PingModal extends React.Component {
     constructor(props) {

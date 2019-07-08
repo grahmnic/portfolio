@@ -1,5 +1,14 @@
 /* using taskbar.css */
 @import url('https://fonts.googleapis.com/css?family=VT323');
 .taskbarGridText {
-    font-size: 13px;
+    font-size: 14px;
+}
+
+.taskbarGridImg {
+    padding: 0;
+    margin-right: 5px !important;
+}
+
+.taskbarDivider {
+
 }

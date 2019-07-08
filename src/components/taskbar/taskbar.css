@@ -27,28 +27,30 @@
 .taskbarInfo {
     float: right;
     line-height: 0;
-    font-size: 1.4rem;
-    margin-right: 5px;
-    background:#C0C0C0;
+    font-size: 1.8rem;
+    margin-right: 1px;
+    background:rgb(190, 190, 190);
     border: 1px solid;
-    padding: 4px;
+    padding: 8px;
     top: 2px;
     position: relative;
-    min-width: 80px;
+    min-width: 17rem;
+    max-height: 3rem;
     text-align: center;
-    border-color:#FFFFFF #808080 #808080 #FFFFFF;
+    border-color:#808080 rgb(236, 236, 236) rgb(236, 236, 236) #808080;
 }
 
 .taskbarDate {
     top: 5px;
     position: relative;
-    font-weight: 800;
+    float: left;
 }
 
 .taskbarTime {
-    top: 6px;
+    float: left;
+    margin-left: 10px;
+    top: 5px;
     position: relative;
-    font-weight: 800;
 }
 
 .taskbar tr td {
@@ -109,6 +111,20 @@
     cursor: pointer;
 }
 
+.groove {
+    float: left;
+    border: solid 1px;
+    margin-left: 10px;
+    height: 20px;
+    position: relative;
+    top: -4px;
+    border-bottom-color: rgb(88, 88, 88);
+    border-right-color: rgb(88, 88, 88);
+    border-left-color: #9e9d9d;
+    border-top-color: #9e9d9d;
+    background-color: #9e9d9d;
+}
+
 .taskbarStartBtn:hover {
     background-color: #b6b2b2;
 }
@@ -120,7 +136,7 @@
     border-color: #a6a6a6;
     padding: 2px;
     position: fixed;
-    width: 140px;
+    width: 170px;
     border-bottom: none;
     border-right-color: #444;
     border-left-color: #a6a6a6;
@@ -152,4 +168,8 @@
 
 .taskbarGridContainer:hover {
     background-color: #a6a6a6;
+}
+
+.taskbarGridContainer {
+
 }

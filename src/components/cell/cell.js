@@ -8,6 +8,7 @@ import Explorer from '../explorer-modal/explorer.js'
 import PortfolioModal from '../portfolio-modal/portfolio-modal.js';
 import PWModal from '../p&w/pw.js';
 import PingModal from '../ping/ping.js';
+import LandingModal from '../landing/landing.js';
 
 class Cell extends React.Component {
     constructor(props) {
@@ -69,7 +70,8 @@ class Cell extends React.Component {
             //PWModal: <PWModal closeModal={this.closeModal} forceUpdate={this.forceUpdate} />
             Explorer: <Explorer modalToTop={this.props.modalToTop} closeModal={this.closeModal} forceUpdate={this.forceUpdate} />,
             PortfolioModal: <PortfolioModal modalToTop={this.props.modalToTop} closeModal={this.closeModal} forceUpdate={this.forceUpdate} />,
-            PingModal: <PingModal modalToTop={this.props.modalToTop} closeModal={this.closeModal} forceUpdate={this.forceUpdate} />
+            PingModal: <PingModal modalToTop={this.props.modalToTop} closeModal={this.closeModal} forceUpdate={this.forceUpdate} />,
+            LandingModal: <LandingModal modalToTop={this.props.modalToTop} closeModal={this.closeModal} forceUpdate={this.forceUpdate} />
         }
 
         return (
@@ -78,7 +80,7 @@ class Cell extends React.Component {
                     <div className={this.state.highlight ? 'highlight-square' : 'no-display'}>
                     
                     </div>
-                    <img data-md-tooltip={this.state.name} className="cellImage no-select" src={this.state.src} onClick={() => this.click()}>
+                    <img id={this.state.name} data-md-tooltip={this.state.name} className="cellImage no-select" src={this.state.src} onClick={() => this.setState({showModal: true})}>
                     </img>
                     <p className="cellText no-select">{this.state.name}</p>
                     <div className="referencePoint">
