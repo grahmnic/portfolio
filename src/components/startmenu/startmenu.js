@@ -60,7 +60,7 @@ class StartMenu extends React.Component {
     openModal(id) {
         var modal = document.getElementById(id);
         if (modal) { 
-            modal.onclick.call(modal.id);
+            modal.click();
         }
     }
 

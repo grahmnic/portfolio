@@ -7,6 +7,14 @@ import WIP from './components/wip/wip.js';
 import Taskbar from './components/taskbar/taskbar.js';
 
 class App extends Component {
+
+  componentDidMount() {
+    var modal = document.getElementById("Landing");
+    if (modal) { 
+        modal.click();
+    }
+  }
+
   render() {
     return (
       <div className="App">

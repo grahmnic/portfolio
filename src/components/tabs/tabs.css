@@ -1,0 +1,29 @@
+.tab-list {
+    background: rgb(160,160,160);
+    padding-left: 0;
+  }
+
+  .tab-list-item:not(:last-child) {
+
+  }
+  
+  .tab-list-item {
+    display: inline-block;
+    list-style: none;
+    padding: 0.25rem 0.75rem;
+    cursor: pointer;
+    background: rgb(160, 160, 160);
+  }
+
+  .tab-list-item:hover {
+      filter: brightness(90%);
+  }
+  
+  .tab-list-active {
+    background: #bfbfbf;
+  }
+
+  .tab-content {
+      padding: 0 5px 0 5px;
+      height: 100%;
+  }

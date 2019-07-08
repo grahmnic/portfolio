@@ -64,8 +64,8 @@ class Desktop extends React.Component {
     render() {
         return (
             <div className="desktop">
-                <div style={{display: "none"}}>
-                    <Cell src={null} modal="LandingModal" name="Landing" modalToTop={this.modalToTop.bind(this)}/>
+                <div className="startmenuModals">
+                    <Cell display="none" src={null} modal="LandingModal" name="Landing" modalToTop={this.modalToTop.bind(this)}/>
                 </div>
                 <div className="row">
                     <div className="col-1"><Cell src={desktopIcons[0].src} modal={desktopIcons[0].modal} name={desktopIcons[0].name} modalToTop={this.modalToTop.bind(this)} /></div>

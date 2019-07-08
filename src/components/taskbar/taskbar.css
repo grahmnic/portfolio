@@ -27,14 +27,14 @@
 .taskbarInfo {
     float: right;
     line-height: 0;
-    font-size: 1.8rem;
+    font-size: 1.5rem;
     margin-right: 1px;
     background:rgb(190, 190, 190);
     border: 1px solid;
     padding: 8px;
     top: 2px;
     position: relative;
-    min-width: 17rem;
+    min-width: 14.8rem;
     max-height: 3rem;
     text-align: center;
     border-color:#808080 rgb(236, 236, 236) rgb(236, 236, 236) #808080;

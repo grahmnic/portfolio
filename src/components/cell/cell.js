@@ -22,15 +22,16 @@ class Cell extends React.Component {
             showModal: false,
             highlight: false
         }
+        this.singleClick = this.singleClick.bind(this);
         this.closeModal = this.closeModal.bind(this);
         this.forceUpdate = this.forceUpdate.bind(this);
     }
 
-    singleClick = () => {
-        // this.setState({
-        //     highlight: true
-        // });
-    };
+    singleClick() {
+        this.setState({
+            showModal: true
+        });
+    }
 
     doubleClick = () => {
         this.setState({
@@ -80,9 +81,9 @@ class Cell extends React.Component {
                     <div className={this.state.highlight ? 'highlight-square' : 'no-display'}>
                     
                     </div>
-                    <img id={this.state.name} data-md-tooltip={this.state.name} className="cellImage no-select" src={this.state.src} onClick={() => this.setState({showModal: true})}>
+                    <img style={{display: this.props.display}} id={this.state.name} data-md-tooltip={this.state.name} className="cellImage no-select" src={this.state.src} onClick={this.singleClick}>
                     </img>
-                    <p className="cellText no-select">{this.state.name}</p>
+                    <p style={{display: this.props.display}} className="cellText no-select">{this.state.name}</p>
                     <div className="referencePoint">
                         {this.state.showModal ? components[this.state.modal] : <div></div>}
                     </div>
