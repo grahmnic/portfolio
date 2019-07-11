@@ -1,5 +1,6 @@
 import React from 'react';
 import './desktop.css';
+import './desktop-context.scss';
 import Cell from '../cell/cell.js';
 import Banner from '../banner/banner.js';
 import FileExplorerIcon from '../../assets/File-Explorer-icon.png';
@@ -50,6 +51,50 @@ class Desktop extends React.Component {
         this.modalList = [];
     }
 
+    componentDidMount() {
+        const menu = document.querySelector(".menu");
+        let menuVisible = false;
+
+        var desktop = document.getElementById('desktop');
+        
+        const toggleMenu = command => {
+          menu.style.opacity = command === "show" ? 1 : 0;
+          menuVisible = !menuVisible;
+        };
+
+        const hideMenu = command => {
+            menu.style.opacity = 0;
+            menu.style.zIndex = -10;
+            menuVisible = false;
+        }
+
+        const showMenu = command => {
+            menu.style.opacity = 1;
+            menu.style.zIndex = 250;
+            menuVisible = false;
+        }
+        
+        const setPosition = ({ top, left }) => {
+          menu.style.left = `${left}px`;
+          menu.style.top = `${top}px`;
+          showMenu();
+        };
+        
+        window.addEventListener("click", e => {
+          hideMenu();
+        });
+        
+        window.addEventListener("contextmenu", e => {
+          e.preventDefault();
+          const origin = {
+            left: e.pageX,
+            top: e.pageY
+          };
+          setPosition(origin);
+          return false;
+        });
+    }
+
     modalToTop(modal) {
         if (this.modalList.includes(modal)) {
             this.modalList.splice(this.modalList.indexOf(modal), 1);
@@ -63,7 +108,15 @@ class Desktop extends React.Component {
 
     render() {
         return (
-            <div className="desktop">
+            <div id='desktop' className="desktop">
+                <div class="menu">
+                    <ul class="menu-options">
+                        <li class="menu-option">Open Program</li>
+                        <li class="menu-option">Call Clippy</li>
+                        <li class="menu-option">Inspect</li>
+                        <li class="menu-option">Quick Lookup</li>
+                    </ul>
+                </div>
                 <div className="startmenuModals">
                     <Cell display="none" src={null} modal="LandingModal" name="Landing" modalToTop={this.modalToTop.bind(this)}/>
                 </div>

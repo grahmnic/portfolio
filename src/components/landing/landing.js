@@ -4,6 +4,7 @@ import Draggable from 'react-draggable';
 
 import nick from '../../assets/nickpixel.png';
 import Tabs from '../tabs/tabs.js';
+import { request } from 'https';
 require('../tabs/tabs.css');
 
 class LandingModal extends React.Component {
@@ -29,21 +30,75 @@ class LandingModal extends React.Component {
     }
 
     scrape() {
-        // var cheerio = require('cheerio');
-        // var $ = cheerio.load("https://trello.com/b/AQzxX0jM/portfolio-2019");
+        var cheerio = require('cheerio');
+        var request = require('request');
+
+        request({
+            method: 'GET',
+            url: 'https://cors-anywhere.herokuapp.com/https://github.com/users/grahmnic/contributions',
+            headers: {
+                "X-Requested-With": ""
+            }
+        }, function(error, response, html) {
+            if (!error && response.statusCode == 200) {
+                let $ = cheerio.load(html);
+                const data = $('rect.day');
+                var arr = [];
+                for (let i = 0; i < data.length; i++) {
+                    arr.push({
+                        "Date": data[i].attribs['data-date'],
+                        "Commits": data[i].attribs['data-count']
+                    });
+                }
+                this.scramble(arr);
+            }
+        }.bind(this));
+
+        // request({
+        //     method: 'GET',
+        //     url: 'https://github.com/users/grahmnic/contributions'
+        // }, (err, res, body) => {
+        //     if (err) return console.error(err);
+        //     let $ = cheerio.load(body);
+        //     const data = $('rect.day');
+        //     var arr = [];
+        //     for (let i = 0; i < data.length; i++) {
+        //         arr.push(data[i].attribs['data-count']);
+        //     }
+        //     console.log(arr);
+        // });
+
         var req = new XMLHttpRequest();
         req.onreadystatechange = function() {
             if(req.readyState == 4 && req.status == 200) {
-                this.scramble(req.responseText);
+                this.getVersion(req.responseText);
             }
         }.bind(this);
         req.open("GET", "https://api.trello.com/1/boards/5d10c331d84b243cecd063bd/?lists=all&cards=all", true);
         req.send(null);
     }
 
-    scramble(response) {
-        var respJSON = JSON.parse(response);
-        console.log(respJSON);
+    scramble(data) {
+        console.log(data);
+    }
+
+    getVersion(data) {
+        var jsonData = JSON.parse(data);
+        var sprints = jsonData.lists;
+        var tasks = jsonData.cards;
+        var sprintArr = {};
+        for(var i = 0; i < sprints.length; i++) {
+            var temp = tasks.filter(task => task.idList == sprints[i].id && !task.dueComplete);
+            if (temp.length > 1) {
+                this.setState({
+                    version: sprints[i].name.split(' ')[1]
+                });
+                break;
+            }
+        }
+        console.log(jsonData);
+        sprints.map(sprint => sprintArr[sprint.id] = tasks.filter(task => task.idList == sprint.id));
+        console.log(sprintArr);
     }
 
     render() {
@@ -76,7 +131,7 @@ class LandingModal extends React.Component {
                             <Tabs>
                                 <div label="welcome">
                                     <div className="welcomeTab">
-                                        <h1 className="welcomeTitle">Welcome to <span className="welcomeSpan1">PORTFOL</span><span className="welcomePeriod">.</span><span className="welcomeSpan2">IO</span></h1>
+                                        <h1 className="welcomeTitle">Welcome to <span className="welcomeSpan1">PORTFOL</span><span className="welcomePeriod">.</span><span className="welcomeSpan2">IO</span><span className="welcomeVersion">{this.state.version}</span></h1>
                                         <div className="welcomePanel">
                                             <div className="welcomeInside">
                                                 <img className="welcomeImg" src={nick}/>
@@ -90,11 +145,11 @@ class LandingModal extends React.Component {
                                         </div>
                                     </div>
                                 </div>
-                                <div label="guide">
+                                <div label="Programs Guide">
                                     Here's how to do shit.
                                 </div>
-                                <div label="nothing">
-                                    Nothing!
+                                <div label="Tracker">
+
                                 </div>
                             </Tabs>
                         </div>

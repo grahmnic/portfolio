@@ -35,9 +35,7 @@ class WIP extends React.Component {
         }
         else {
             return(
-                <div>
-
-                </div>
+                <div></div>
             );
         }
     }
