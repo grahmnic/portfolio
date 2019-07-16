@@ -149,7 +149,9 @@ class LandingModal extends React.Component {
                                     Here's how to do shit.
                                 </div>
                                 <div label="Tracker">
-
+                                    <div className="trackerPanel">
+                                        
+                                    </div>
                                 </div>
                             </Tabs>
                         </div>

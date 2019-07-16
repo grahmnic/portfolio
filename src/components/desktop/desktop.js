@@ -81,7 +81,7 @@ class Desktop extends React.Component {
         };
         
         window.addEventListener("click", e => {
-          hideMenu();
+            hideMenu();
         });
         
         window.addEventListener("contextmenu", e => {

@@ -1,27 +1,13 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
-import Banner from './components-portfolio/banner/banner.js'
-import Desktop from './components/desktop/desktop.js';
-import WIP from './components/wip/wip.js';
-import Taskbar from './components/taskbar/taskbar.js';
+import AppView from './views/app-view.js';
 
 class App extends Component {
-
-  componentDidMount() {
-    var modal = document.getElementById("Landing");
-    if (modal) { 
-        modal.click();
-    }
-  }
 
   render() {
     return (
       <div className="App">
-         <WIP />
-         <Banner />
-         <Desktop />
-         <Taskbar />
+         <AppView />
       </div>
     );
   }
