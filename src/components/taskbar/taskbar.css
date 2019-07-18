@@ -2,6 +2,7 @@
     height: 35px;
     position: absolute;
     width: 100vw;
+    min-width: 82rem;
     bottom: 0;
     background-color: #bfbfbf;
     display: table;
@@ -34,7 +35,7 @@
     padding: 8px;
     top: 2px;
     position: relative;
-    min-width: 14.8rem;
+    min-width: 14.9rem;
     max-height: 3rem;
     text-align: center;
     border-color:#808080 rgb(236, 236, 236) rgb(236, 236, 236) #808080;

@@ -1,0 +1,127 @@
+.signin-window {
+    z-index: 2;
+    height: 415px;
+    width: 750px;
+    border: 2px solid;
+    border-bottom-color: #444;
+    border-right-color: #444;
+    border-left-color: #a6a6a6;
+    border-top-color: #a6a6a6;
+    background-color: #bfbfbf;
+    margin: auto;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    position: absolute;
+}
+
+.signin-handle {
+    cursor: default !important;
+}
+
+.signin-btn {
+    font-size: 16px;
+    line-height: 11px;
+}
+
+.signin-body {
+    border-bottom: 1px solid #9D9F9F;
+    border-right: 1px solid #9D9F9F;
+    border-top: 1px solid white;
+    border-left: 1px solid white;
+    padding: 10px;
+}
+
+.signin-panel {
+    padding: 8px;
+    transform: translateY(-20px);
+}
+
+.signin-wrapper {
+    border-top: 1.5px solid #9D9F9F;
+    border-left: 1.5px solid #9D9F9F;
+    border-bottom: 1px solid white;
+    border-right: 1px solid white;
+    width: 49.5%;
+}
+
+.signin-title {
+    font-size: 15px;
+    font-weight: 500;
+    transform: translate(17px, 17px);
+    display: inline-block;
+    background: #bfbfbf;
+    padding: 5px;
+}
+
+.signin-inputs {
+    height: 150px;
+}
+
+.signin-right {
+    float: right;
+    width: 49.5%;
+    height: 150px;
+}
+
+.signin-info .signin-body {
+    padding-bottom: 0 !important;
+    height: 100%;
+}
+
+.signin-info {
+    width: 100% !important;
+    height: 50%;
+}
+
+.signin-btns {
+    margin-top: 10px;
+    height: 45%;
+}
+
+.signin-btns button {
+    height: 100%;
+    width: 48.5%;
+    font-size: 30px;
+    background: none;
+}
+
+.signin-btns button:hover {
+    background: rgb(219, 219, 219);
+}
+
+.signin-btns button:first-child {
+    margin-right: 10px;
+}
+
+.signin-body input {
+    margin-bottom: 5px;
+}
+
+.signin-img {
+    background-image: url('../../assets/beach4.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    width: 98%;
+    position: relative;
+    margin: auto;
+    top: 5px;
+    height: 200px;
+    border-width: 3px;
+    border-style: solid;
+    border-top-color:#9D9F9F;
+    border-left-color:#9D9F9F;
+    border-bottom-color:white;
+    border-right-color:white;
+}
+
+.signin-label {
+    font-weight: normal;
+}
+
+.signin-checkbox {
+    transform: translateY(3px);
+    margin-right: 3px !important;
+}
