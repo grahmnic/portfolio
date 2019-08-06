@@ -6,6 +6,10 @@ import Taskbar from '../components/taskbar/taskbar.js';
 
 class AppView extends Component {
 
+    constructor(props) {
+        super(props);
+    }
+
   componentDidMount() {
     var modal = document.getElementById("Landing");
     if (modal) { 
@@ -19,7 +23,7 @@ class AppView extends Component {
          <WIP />
          <Banner />
          <Desktop />
-         <Taskbar />
+         <Taskbar guestLogout={this.props.guestLogout}/>
       </div>
     );
   }

@@ -13,6 +13,7 @@ class Signin extends React.Component {
         this.state = {
             chosenImg: imgArr[Math.floor(Math.random(0, imgArr.length))]
         }
+        this.handleLogin = this.handleLogin.bind(this);
     }
 
     componentDidMount() {
@@ -31,7 +32,9 @@ class Signin extends React.Component {
     }
 
     handleLogin() {
-        
+        if (document.getElementById("guest").checked) {
+            this.props.guestLogin();
+        }
     }
 
     render() {

@@ -56,7 +56,7 @@ class Taskbar extends React.Component {
         return (
             <table class="taskbar">
                 <tr>
-                    <StartMenu setClick={click => this.clickChild = click}/>
+                    <StartMenu setClick={click => this.clickChild = click} guestLogout={this.props.guestLogout}/>
                     <td className="startCol">
                         <div className={'taskbarElement'}>
                             <button className="taskbarStartBtn" onClick={() => this.clickChild()}>

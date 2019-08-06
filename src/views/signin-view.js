@@ -3,6 +3,10 @@ import Signin from '../components-signin/signin-window/signin-window.js';
 
 class SigninView extends Component {
 
+    constructor(props) {
+        super(props);
+    }
+
   componentDidMount() {
 
   }
@@ -10,7 +14,7 @@ class SigninView extends Component {
   render() {
     return (
       <div className="App">
-         <Signin />
+         <Signin guestLogin={this.props.guestLogin}/>
       </div>
     );
   }

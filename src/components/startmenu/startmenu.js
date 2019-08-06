@@ -73,7 +73,7 @@ class StartMenu extends React.Component {
                     <TaskbarGridItem src={help} name="Help" openModal={this.openModal} modal="Landing"></TaskbarGridItem>
                     <TaskbarGridItem src={settings} name="Settings" openModal={this.openModal} modal="Landing"></TaskbarGridItem>
                     <TaskbarGridItem src={recycle} name="Recycle" openModal={this.openModal} modal="Landing"></TaskbarGridItem>
-                    <TaskbarGridItem src={quit} name="Shut Down" openModal={this.openModal} modal="Landing"></TaskbarGridItem>
+                    <TaskbarGridItem src={quit} name="Sign Out" openModal={this.props.guestLogout} modal="SignOut"></TaskbarGridItem>
                 </div>
             )
         }
