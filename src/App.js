@@ -4,26 +4,50 @@ import AppView from './views/app-view.js';
 import SigninView from './views/signin-view.js';
 import LoaderWidget from './components/widgets/loader/loader.js';
 
-const loaderWidget = <LoaderWidget />;
-
 class App extends Component {
 
   constructor(props) {
     super(props);
     this.state = {
-      verified: false
+      verified: false,
+      loading: false
+    }
+    this.loadingOptions = {
+      mode: "default",
+      title: "Logging In",
+      modules: [
+        "Awaiting response from server...",
+        "Getting user settings...",
+        "Loading modules...",
+        "Loading application...",
+        "Applying user configuration...",
+        "Almost there..."
+      ],
+      callback: null
     }
   }
   
   guestLogin() {
+    this.loadingOptions.callback = () => {
+      this.setState({
+        verified: true,
+        loading: false
+      });
+    }
     this.setState({
-      verified: true
+      loading: true
     });
   }
 
   guestLogout() {
+    this.loadingOptions.callback = () => {
+      this.setState({
+        verified: false,
+        loading: false
+      });
+    }
     this.setState({
-      verified: false
+      loading: true
     });
   }
 
@@ -32,9 +56,9 @@ class App extends Component {
       <div className="App">
         {
           this.state.verified ? <AppView guestLogout={this.guestLogout.bind(this)}/> : <SigninView guestLogin={this.guestLogin.bind(this)} />
-        } 
+        }
         {
-          loaderWidget
+          this.state.loading ? <LoaderWidget options={this.loadingOptions} /> : null
         }
       </div>
     );

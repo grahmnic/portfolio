@@ -67,8 +67,8 @@ class Signin extends React.Component {
                                     <span>Password: </span>
                                     <input type="password" className="signin-input" />
                                     <br />
-                                    <input type="checkbox" id="guest" onClick={this.handleClick} sname="guest" className="signin-checkbox"/>
-                                    <label for="guest" className="signin-label">Log In As A Guest</label>
+                                    <input type="checkbox" id="guest" onClick={this.handleClick} name="guest" className="signin-checkbox"/>
+                                    <label className="signin-label">Log In As A Guest</label>
                                 </div>
                             </div>
                             <div className="signin-right">
