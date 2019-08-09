@@ -9,7 +9,7 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      verified: true,
+      verified: false,
       loading: false
     }
     this.loadingOptions = {
