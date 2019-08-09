@@ -1,7 +1,8 @@
 import React from 'react';
 import './landing.css';
+import {Card, CardHeader} from '@material-ui/core';
 import Draggable from 'react-draggable';
-
+import keyIndex from 'react-key-index';
 import nick from '../../assets/nickpixel.png';
 import Tabs from '../tabs/tabs.js';
 import { request } from 'https';
@@ -11,7 +12,9 @@ class LandingModal extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            version: ""
+            version: "",
+            gitData: null,
+            trelloData: null
         }
         this.ref = React.createRef();
     }
@@ -79,7 +82,9 @@ class LandingModal extends React.Component {
     }
 
     scramble(data) {
-        console.log(data);
+        this.setState({
+            gitData: keyIndex(data, 3)
+        })
     }
 
     getVersion(data) {
@@ -87,18 +92,23 @@ class LandingModal extends React.Component {
         var sprints = jsonData.lists;
         var tasks = jsonData.cards;
         var sprintArr = {};
+        var currentSprint;
         for(var i = 0; i < sprints.length; i++) {
             var temp = tasks.filter(task => task.idList == sprints[i].id && !task.dueComplete);
             if (temp.length > 1) {
+                currentSprint = temp[0].idList;
                 this.setState({
                     version: sprints[i].name.split(' ')[1]
                 });
                 break;
             }
         }
-        console.log(jsonData);
         sprints.map(sprint => sprintArr[sprint.id] = tasks.filter(task => task.idList == sprint.id));
-        console.log(sprintArr);
+    
+        var currentTasks = tasks.filter(task => task.idList == currentSprint)
+        this.setState({
+            trelloData: keyIndex(currentTasks, 4)
+        })
     }
 
     render() {
@@ -129,7 +139,7 @@ class LandingModal extends React.Component {
                     <div id="mm-landing">
                         <div className="landingTabs">
                             <Tabs>
-                                <div label="welcome">
+                                <div label="Welcome">
                                     <div className="welcomeTab">
                                         <h1 className="welcomeTitle">Welcome to <span className="welcomeSpan1">PORTFOL</span><span className="welcomePeriod">.</span><span className="welcomeSpan2">IO</span><span className="welcomeVersion">{this.state.version}</span></h1>
                                         <div className="welcomePanel">
@@ -145,12 +155,54 @@ class LandingModal extends React.Component {
                                         </div>
                                     </div>
                                 </div>
-                                <div label="Programs Guide">
-                                    Here's how to do shit.
+                                <div label="Programs Guide" style={{padding: "0px"}}>
+                                    <Tabs>
+                                        <div label="Writepad"></div>
+                                        <div label="Calculator"></div>
+                                        <div label="File Manager">
+
+                                        </div>
+                                        <div label="User Guide">
+
+                                        </div>
+                                        <div label="Contacts">
+
+                                        </div>
+                                        <div label="Start Menu"></div>
+                                        <div label="Portfolio"></div>
+                                        <div label="Digital Studios"></div>
+                                        <div label="Doogle Roam"></div>
+                                        <div label="Desktop"></div>
+                                    </Tabs>
                                 </div>
                                 <div label="Tracker">
                                     <div className="trackerPanel">
-                                        
+                                        {
+                                            this.state.gitData ? this.state.gitData.map(day => {
+                                                if (day.Commits == 0) {
+                                                    return <div key={day._DateId} className="tr-0"></div>
+                                                } else if (day.Commits < 3) {
+                                                    return <div key={day._DateId} className="tr-1"></div>
+                                                } else if (day.Commits < 5) {
+                                                    return <div key={day._DateId} className="tr-2"></div>
+                                                } else if (day.Commits < 8) {
+                                                    return <div key={day._DateId} className="tr-3"></div>
+                                                } else if (day.Commits < 11) {
+                                                    return <div key={day._DateId} className="tr-4"></div>
+                                                } else {
+                                                    return <div key={day._DateId} className="tr-5"></div>
+                                                }
+                                            }) : null
+                                        }
+                                    </div>
+                                    <div className="trello">
+                                        {
+                                            this.state.trelloData ? this.state.trelloData.map(item => {
+                                                return <div>
+                                                    <div>{item.name}</div>
+                                                </div>
+                                            }) : null
+                                        }
                                     </div>
                                 </div>
                             </Tabs>

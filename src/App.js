@@ -9,7 +9,7 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      verified: false,
+      verified: true,
       loading: false
     }
     this.loadingOptions = {
@@ -28,6 +28,19 @@ class App extends Component {
   }
   
   guestLogin() {
+    this.loadingOptions = {
+      mode: "default",
+      title: "Logging In",
+      modules: [
+        "Awaiting response from server...",
+        "Getting user settings...",
+        "Loading modules...",
+        "Loading application...",
+        "Applying user configuration...",
+        "Almost there..."
+      ],
+      callback: null
+    }
     this.loadingOptions.callback = () => {
       this.setState({
         verified: true,
@@ -40,6 +53,19 @@ class App extends Component {
   }
 
   guestLogout() {
+    this.loadingOptions = {
+      mode: "default",
+      title: "Logging Out",
+      modules: [
+        "Awaiting response from server...",
+        "Storing user settings...",
+        "Unloading modules...",
+        "Unloading application...",
+        "Saving user configuration...",
+        "Almost there..."
+      ],
+      callback: null
+    }
     this.loadingOptions.callback = () => {
       this.setState({
         verified: false,

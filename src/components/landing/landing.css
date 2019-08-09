@@ -105,3 +105,41 @@
     opacity: 0.3;
 }
 
+.trackerPanel {
+    display: grid;
+    grid-template-columns: repeat(30, 1fr);
+}
+
+.trackerPanel div {
+    width: 10px;
+    height: 10px;
+    margin: 2px;
+}
+
+.trackerTooltip {
+    
+}
+
+.tr-0 {
+    background: #EBEDF0;
+}
+
+.tr-1 {
+    background: #C6E48B;
+}
+
+.tr-2 {
+    background: #7BC96F;
+}
+
+.tr-3 {
+    background: #239A3B;
+}
+
+.tr-4 {
+    background: #196127;
+}
+
+.tr-5 {
+    background: #093512;
+}

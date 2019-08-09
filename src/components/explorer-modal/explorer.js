@@ -11,6 +11,7 @@ import md_disc_in from '../../assets/md.png';
 import disc from '../../assets/disc.png';
 import md_file from '../../assets/md-file.png';
 import text from '../../assets/text.png';
+import Tabs from '../tabs/tabs.js';
 
 class date {
     date = {
@@ -289,8 +290,20 @@ class Explorer extends React.Component {
                     </div>
                     <div id="mm-explorer" className="window">
                         <div className="toolbar">
-                            <div className="tabs">
-                            </div>
+                            <Tabs>
+                                <div label="File">
+
+                                </div>
+                                <div label="Home">
+
+                                </div>
+                                <div label="Share">
+
+                                </div>
+                                <div label="View">
+
+                                </div>
+                            </Tabs>
                             <div className="windowNav">
                                 <div className="windowToolbar">
 
@@ -358,6 +371,7 @@ class Explorer extends React.Component {
                                 <ul className="directoriesList">
                                     {this.state.currentDirectoryState.map((obj) =>
                                         <li className="nodeCell" key={obj.id} onClick={() => this.handleClick(obj.value)}>
+                                            <input style={{float: "left", marginLeft: "10px"}}type="checkbox" />
                                             <img className="nodeImg" src={this.directory.findNode(obj.value).getType()} alt='' />
                                             <span className="nodeText">{obj.value}</span>
                                             <span className="nodeSize">{this.directory.findNode(obj.value).size}</span> 
