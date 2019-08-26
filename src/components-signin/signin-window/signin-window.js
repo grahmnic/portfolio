@@ -5,21 +5,25 @@ import beach2 from '../../assets/beach2.png';
 import beach3 from '../../assets/beach3.png';
 import beach4 from '../../assets/beach4.png';
 
-const imgArr = [beach1, beach2, beach3, beach4];
-
 class Signin extends React.Component {
     constructor(props) {
         super(props);
+        this.imgArr = [beach1, beach2, beach3, beach4];
+        this.styles = {
+            container: {
+                backgroundImage: `url(${this.imgArr[Math.floor(Math.random() * this.imgArr.length)]})`
+            }
+        };
         this.state = {
-            chosenImg: imgArr[Math.floor(Math.random(0, imgArr.length))]
+            chosenImg: this.imgArr[Math.floor(Math.random() * this.imgArr.length)]
         }
         this.handleLogin = this.handleLogin.bind(this);
     }
 
     componentDidMount() {
         this.setState({
-            chosenImg: imgArr[Math.floor(Math.random()*imgArr.length)]
-        })
+            chosenImg: this.imgArr[Math.floor(Math.random() * this.imgArr.length)]
+        });
     }
 
     handleClick() {
@@ -54,7 +58,7 @@ class Signin extends React.Component {
                     </div>
                     <div>
                         <div className="signin-imgPanel">
-                            <div className="signin-img"></div>
+                            <div className="signin-img" id="signin-img" style={this.styles.container}></div>
                         </div>
                         <div className="signin-panel">
                             <span className="signin-title">Sign in</span>
