@@ -55,7 +55,7 @@ class Banner extends React.Component {
         var icon = document.getElementById(id);
         var tooltip = document.createElement('span');
         tooltip.innerText = "Copied";
-        tooltip.style.fontFamily="'VT323', monospace";
+        tooltip.style.fontFamily="'VT323'";
         icon.parentElement.appendChild(tooltip);
         tooltip.classList.add('modal-tooltip');
         setTimeout(function() {
