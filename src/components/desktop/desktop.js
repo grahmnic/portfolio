@@ -6,6 +6,7 @@ import Banner from '../banner/banner.js';
 import FileExplorerIcon from '../../assets/File-Explorer-icon.png';
 import Portfolio from '../../assets/Portfolio.png';
 import PingModal from '../../assets/ping.png';
+import WritePadIcon from '../../assets/writepad.png';
 
 const desktopIcons = [
     {
@@ -24,7 +25,7 @@ const desktopIcons = [
         name: 'Digital Studios'
     },
     {
-        src: 'http://www.milk.com.hk/sites/default/files/imagecache/largebanner/sites/default/files/notepad_1.png',
+        src: WritePadIcon,
         modal: 'NotepadModal',
         name: 'Writepad'
     },
