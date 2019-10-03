@@ -16,7 +16,7 @@ const desktopIcons = [
     },
     {
         src: 'http://1000logos.net/wp-content/uploads/2017/08/Chrome-Logo.png',
-        modal: '',
+        modal: 'GoogleModal',
         name: 'Doogle Roam'
     },
     {

@@ -9,6 +9,7 @@ import PortfolioModal from '../portfolio-modal/portfolio-modal.js';
 import PWModal from '../p&w/pw.js';
 import PingModal from '../ping/ping.js';
 import LandingModal from '../landing/landing.js';
+import GoogleModal from '../google-modal/google.js';
 
 class Cell extends React.Component {
     constructor(props) {
@@ -72,7 +73,8 @@ class Cell extends React.Component {
             Explorer: <Explorer modalToTop={this.props.modalToTop} closeModal={this.closeModal} forceUpdate={this.forceUpdate} />,
             PortfolioModal: <PortfolioModal modalToTop={this.props.modalToTop} closeModal={this.closeModal} forceUpdate={this.forceUpdate} />,
             PingModal: <PingModal modalToTop={this.props.modalToTop} closeModal={this.closeModal} forceUpdate={this.forceUpdate} />,
-            LandingModal: <LandingModal modalToTop={this.props.modalToTop} closeModal={this.closeModal} forceUpdate={this.forceUpdate} />
+            LandingModal: <LandingModal modalToTop={this.props.modalToTop} closeModal={this.closeModal} forceUpdate={this.forceUpdate} />,
+            GoogleModal: <GoogleModal modalToTop={this.props.modalToTop} closeModal={this.closeModal} forceUpdate={this.forceUpdate} />
         }
 
         return (
